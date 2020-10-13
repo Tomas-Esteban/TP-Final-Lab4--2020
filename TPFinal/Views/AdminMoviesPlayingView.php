@@ -12,14 +12,11 @@
 
       <div class="row justify-content-center align-items-center">
 
-        <div class="col-md-6 text-center m-auto" >
+        <div class="col-md-6 text-center m-auto">
           <div class="textbox">
-            <select class="custom-select" >
-
+            <select class="custom-select">
               <option value="0">Selecciona el Género</option>
-              <?php foreach($moviegender as $moviegenders) { ?>
-              <option value="1"><?php echo $moviegenders->getGenresFromApi(); ?></option>
-            <?php } ?>
+              <option value="1"></option>
             </select>
           </div>
         </div>

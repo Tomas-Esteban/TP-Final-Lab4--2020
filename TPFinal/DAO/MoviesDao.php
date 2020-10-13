@@ -202,34 +202,6 @@ function remove($movies)
 		}
 	}
 
-	public function getByDate($ReleaseDate)
-	{
-		try
-		{
-			$query = "SELECT * FROM " . $this->tableName . " WHERE ReleaseDate = " . $ReleaseDate . ";";
-			$this->connection = Connection::GetInstance();
-			$resultSet = $this->connection->Execute($query);
-
-			foreach ($resultSet as $row) 
-			{
-				$movies->setIdMovie($row["IdMovie"]);
-				$movies->setIdMovieIMDB($row["IdMovieIMDB"]);
-				$movies->setMovieName($row["MovieName"]);
-				$movies->setDuration($row["Duration"]);
-				$movies->setSynopsis($row["Synopsis"]);
-				$movies->setReleaseDate($row["ReleaseDate"]);
-				$movies->setPhoto($row["Photo"]);
-				$movies->setEarnings($row["Earnings"]);
-				$movies->setBudget($row["Budget"]);
-				$movies->setOriginalLAnguage($row["OriginalLanguage"]);
-
-				return $movies;
-			}
-		} catch (Exception $ex) {
-			return null;
-		}
-	}
-
 	public function getByIdMovieIMDB($idMovieIMDB)
 	{
 		try {
