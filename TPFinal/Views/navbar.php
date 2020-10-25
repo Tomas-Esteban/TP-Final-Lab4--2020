@@ -21,7 +21,7 @@
               <a class="nav-link" href="';echo FRONT_ROOT. 'Movies/ShowApiMovies"><i class="fas fa-film"></i>&nbspCartelera</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowListView" tabindex="-1" aria-disabled="true"><i class="fas fa-id-card"></i>&nbspCines</a>
+              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowAddView" tabindex="-1" aria-disabled="true"><i class="fas fa-id-card"></i>&nbspCines</a>
             </li>
           </ul>';
 

@@ -82,8 +82,8 @@ class MoviesDAO implements IMoviesDAO
 	}
 
 	public function AddToDatabase($idMovieIMDB)
-	{
-		$movies = $this->getMovieDetailsFromApi($idTMDB);
+	{ 
+		$movies = $this->getMovieDetailsFromApi($idMovieIMDB);
 		$this->moviesDAO->add($movies);
 		return true;
 	}
