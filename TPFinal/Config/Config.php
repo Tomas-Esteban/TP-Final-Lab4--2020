@@ -2,7 +2,7 @@
 
 define("ROOT", dirname(__DIR__) . "/");
 //Path to your project's root folder
-define("FRONT_ROOT", "/MoviePass/");
+define("FRONT_ROOT", "/TPFinal/");
 define("VIEWS_PATH", "Views/");
 define("FACEBOOK_PATH", "FacebookLogIn/");
 define("DAO_PATH", "DAO/");
