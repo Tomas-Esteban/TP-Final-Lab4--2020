@@ -1,3 +1,7 @@
+<?php 
+
+require_once("navbar.php");
+?> 
 <main>
      <section>
           <div class="container">
@@ -6,7 +10,7 @@
                          <h1 id="mainTitle"><i class="fas fa-ticket-alt"></i>&nbspMoviePass</h1>
                          <hr>
                          <br>
-                         <form action="<?php echo FRONT_ROOT ?>Login/Index" method="post">
+                         <form action="<?php echo FRONT_ROOT ?>Login/Index" method="POST">
                               <div class="login-box">
                                    <div class="textbox">
                                         <i class="fas fa-user"></i>

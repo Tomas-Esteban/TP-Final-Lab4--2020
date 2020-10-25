@@ -8,9 +8,9 @@ class ApiResponse
 {
     public static function HomologatesApiResponse($ApiRequest)
     {
-        $arrayReque = array("api_key" => API_KEY, "language" => LANGUAGE_ES);
-        $get_data = APIController::callAPI('GET', API_MAIN_LINK . $ApiRequest, $arrayReque);
-        return json_decode($get_data, true);
+        $get_data = API_MAIN_LINK . $ApiRequest. API_KEY;
+        $json = json_decode(file_get_contents($get_data),true);
+        return $json;
     }
 }
 

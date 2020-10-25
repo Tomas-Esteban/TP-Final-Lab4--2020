@@ -54,7 +54,7 @@ class CinemaController
 
     public function ShowAddView($alertMessage = "")
     {
-       /* if (Validate::Logged() && Validate::AdminLog()) {*/
+        if (Validate::Logged() && Validate::AdminLog()) {*/
 
             $countryList = array();
             $countryList = $this->citiesDAO->getAllCountries();
@@ -71,9 +71,9 @@ class CinemaController
 
 
             require_once(VIEWS_PATH . "AddCinemaView.php");
-       /* } else {
+        } else {
             HomeController::Index();
-        }*/
+        }
     }
 
 

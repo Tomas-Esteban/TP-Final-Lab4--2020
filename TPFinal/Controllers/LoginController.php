@@ -24,11 +24,11 @@ class LoginController
     public function Index()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $user =Validate :: ValidateData($_POST["email"]);
-            $password =Validate :: ValidateData($_POST["pass"]);
+            $user = $_POST["email"];
+            $password = $_POST["pass"];
 
             try {
-                $password = Hash :: Hashing($password);
+                //$password = Hash :: Hashing($password);
                 $selectedUser = $this->userDAO->LogIn($user, $password);
 
                 if ($selectedUser != null) {

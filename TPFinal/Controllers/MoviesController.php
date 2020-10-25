@@ -175,6 +175,16 @@ class MoviesController
 		require_once(VIEWS_PATH . "MoviesPlayingView.php");
 	}
 
+	public function SearchByDate($date)
+	{
+		if ($movieName != null) {
+			$movieList = $this->moviesDAO->getByDate($date);
+		} else {
+			$movieName = 0;
+		}
+		require_once(VIEWS_PATH . "MoviesPlayingView.php");
+	}
+
 	public function GetMovieFromApiByName($movieName)
 	{
 		$movieList = array();

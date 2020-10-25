@@ -9,10 +9,11 @@ define("DAO_PATH", "DAO/");
 define("CSS_PATH", FRONT_ROOT.VIEWS_PATH . "css/");
 define("JS_PATH", FRONT_ROOT.VIEWS_PATH . "js/");
 
-define("API_KEY","5fcc84b4405027ef2883744147b3a9eb");
+define("API_KEY","?api_key=5fcc84b4405027ef2883744147b3a9eb");
 define("LANGUAGE_ES","es");
 define("API_MAIN_LINK","https://api.themoviedb.org/3");
 define("IMG_LINK","https://image.tmdb.org/t/p/w185");
+define('IMG_PATH', FRONT_ROOT . '/asset/img');
 
 define("DB_HOST", "localhost"); //remotemysql.com
 define("DB_NAME", "MoviePassDB"); //VhBTZDPMnR

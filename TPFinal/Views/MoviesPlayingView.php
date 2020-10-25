@@ -14,7 +14,7 @@
 							 <option value="1"></option>
 						 </select>
 					  <div class="textbox">
-						  <form  action="">
+						  <form  action="<?php echo FRONT_ROOT ?> Movies/SearchByDate" method = "POST">
 							<input id="inputDate" type="date" name="date">
 							<button type="submit" class="btn btn-primary">Buscar</button>
 						  </form>			
