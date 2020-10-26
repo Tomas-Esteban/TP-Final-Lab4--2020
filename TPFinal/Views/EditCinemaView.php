@@ -14,44 +14,44 @@ require_once("navbar.php");
             <!-- form     -->
             <div class="col-md-10">
 
-                <form>
+                <form action = "<?php echo FRONT_ROOT ?>Cinema/Add" method= "post">
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Nombre</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name= "cinemaName">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputPais"><i style="color: red;">&#42&nbsp</i>Pais</label>
                             <select id="inputPais" class="form-control">
-                                <option selected>Elije uno</option>
-                                <option>...</option>
+                                <option selected>Argentina</option>
+                                
                             </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputProvincia"><i style="color: red;">&#42&nbsp</i>Provincia</label>
                             <select id="inputProvincia" class="form-control" disabled>
-                                <option selected>Elije una</option>
-                                <option>...</option>
+                                <option selected>Buenos Aires</option>
+                                
                             </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputCiudad"><i style="color: red;">&#42&nbsp</i>Ciudad</label>
                             <select id="inputCiudad" class="form-control" disabled>
-                                <option selected>Elije una</option>
-                                <option>...</option>
+                                <option selected>Mar del plata</option>
+                                
                             </select>
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Dirección</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Dirección">
+                            <input type="text" class="form-control" id="inputNombre" name= "address" placeholder="Dirección">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Número</label>
-                            <input type="number" class="form-control" id="inputNombre" placeholder="Número">
+                            <input type="number" class="form-control" id="inputNombre" name= "number" placeholder="Número">
                         </div>                        
                     </div>                    
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspAgregar nuevo Cine</button>

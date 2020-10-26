@@ -4,7 +4,7 @@ namespace Controllers;
 
 use DAO\CinemaDAO as CinemaDAO;
 use DAO\RoomDAO as RoomDAO;
-use DAO\CitiesDAO as CitiesDAO; 
+
 use DAO\AddressDAO as AddressDAO; 
 
 use Controllers\RoomController as RoomController;
@@ -15,9 +15,7 @@ use Exception;
 use Util\ApiResponse;
 use Util\Validate;
 use Controllers\HomeController as HomeController;
-use Models\City as City;
-use Models\State as State;
-use Models\Country as Country;
+
 use Models\Address as Address;
 
 
@@ -32,7 +30,7 @@ class CinemaController
     {
         $this->cinemaDAO = new CinemaDAO();
         $this->roomDAO = new RoomDAO();
-        $this->citiesDAO = new CitiesDAO();
+       
     }
 
 
@@ -56,21 +54,7 @@ class CinemaController
     {
         if (Validate::Logged() && Validate::AdminLog()) {
 
-            $countryList = array();
-            $countryList = $this->citiesDAO->getAllCountries();
-            
-            $stateList = array();
-            $cityList = array();
-
-            foreach ($countryList as $country){
-                $stateList = $this->citiesDAO->getStateByCountry($country->getIdCountry());
-            }
-            foreach ($stateList as $state){
-                $cityList = $this->citiesDAO->getCitiesByState($state->getIdState());
-            }
-
-
-            require_once(VIEWS_PATH . "AddCinemaView.php");
+           require_once(VIEWS_PATH . "AddCinemaView.php");
         } else {
             HomeController::Index();
         }
@@ -88,43 +72,35 @@ class CinemaController
         }
     }
 
-    public function Add($cinemaName,  $countryName, $stateName, $cityName, $address,$number)
+    public function Add($cinemaName, $address,$number)
     {
-        /*if (Validate::Logged() /*&& Validate::AdminLog()) { /*<---------------------------------------------*/
+        if (Validate::Logged() && Validate::AdminLog()) { /*<---------------------------------------------*/
 
             $cinemaName =($cinemaName);
             $address = ($address);
             $number = ($number);
-            $countryName = ($countryName);
-            $stateName = ($stateName);
-            $cityName = ($cityName);
-
+            
             if ($this->cinemaDAO->getCinemaByName($cinemaName)) {
                 $this->ShowAddView("Cine ya existente");
             }
+            
             $cinema = new Cinema();
             $addressAdd = new Address();
-            $city = new City();
-            $city = $this->citiesDAO->getIdCitiesByName($cityName);
-
+           
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
-            $addressAdd->setIdCity($city->getIdCity());
             $this->addressDAO->add($addressAdd);
 
             $cinema->setCinemaName($cinemaName);
-            $cinema->setCountryName($countryName);
-            $cinema->setStateName($stateName);
-            $cinema->setCityName($cityName);
             $cinema->setNumber($number);
             $cinema->setAddress($this->addressDAO->getIdFromDataBase($addressAdd));
-
+            
             $this->cinemaDAO->add($cinema);
             RoomController::ShowAddView($cinema);
-       /* } else {
+        } else {
 
             HomeController::Index();
-        }*/
+        }
     }
 
     public function Remove($idCinema)

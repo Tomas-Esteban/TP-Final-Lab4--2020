@@ -26,8 +26,7 @@ class AddressDAO
                 $address->setIdAddress($row["IdAddress"]);
                 $address->setStreet($row["Street"]);
                 $address->setNumberStreet($row["NumberStreet"]);
-                $address->setIdCity($row["IdCity"]);
-    
+
                 array_push($parameters, $address);
             }
             return $parameters;
@@ -38,41 +37,17 @@ class AddressDAO
 
     }
 
-    public function getAddressByCity($idCity){
-        $query = "SELECT * FROM " . $this->tableName . " WHERE IdCity = " . $idCity . " ;";
-        $parameters = array();
-        $this->connection = Connection::GetInstance();
-        $result = $this->connection->Execute($query, $parameters, QueryType::Query);
-
-        try{
-
-            foreach ($result as $row) {
-                $address = new Address();
-                $address->setIdAddress($row["IdAddress"]);
-                $address->setStreet($row["Street"]);
-                $address->setNumberStreet($row["NumberStreet"]);
-                $address->setIdCity($row["IdCity"]);
-    
-                array_push($parameters, $address);
-            }
-            return $parameters;
-        }
-        catch (Exception $ex) {
-            throw $ex;
-        }
-    }
 
     public function add($address){
        
         try{
-            $query = "INSERT INTO " . $this->stateTableName . " ( Street, NumberStreet, IdCity) VALUES ( :Street, :NumberStreet, .IdCity);";
+            $query = "INSERT INTO " . $this->stateTableName . " ( Street, NumberStreet) VALUES ( :Street, :NumberStreet);";
             $this->connection = Connection::GetInstance();
             $resultSet = $this->connection->Execute($query);
 
             $parameters["Street"] = $address->getStreet();
             $parameters["NumberStreet"] = $address->getNumberStreet();
-            $parameters["IdCity"] = $address->getIdCity();
-            
+        
             $this->connection = Connection::GetInstance();
             $this->connection->ExecuteNonQuery($query, $parameters);
         
@@ -95,9 +70,7 @@ class AddressDAO
 
             foreach ($result as $row) {
                 $address = new Address();
-                $address->setIdAddress($row["IdAddress"]);
-
-    
+                $address->setIdAddress($row["IdAddress"]);    
             }
             return $address;
         }
