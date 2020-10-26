@@ -4,14 +4,14 @@
     class RoomDAO
     {
         private $connection;
-        private $tableName = "Rooms";
+        private $tableName = "rooms";
        
         public function Add($room)
         {
             try 
             {
-                $query = "INSERT INTO " . $this->tableName . " (idCinema, RoomNumber) VALUES (:idCinema, :RoomNumber);";
-                $parameters["idCinema"] = $room->getIdCinema();
+                $query = "INSERT INTO " . $this->tableName . " (CinemaId, RoomNumber) VALUES (:CinemaId, :RoomNumber);";
+                $parameters["CinemaId"] = $room->getIdCinema();
                 $parameters["RoomNumber"] = $room->getRoomNumber();
         
                 $this->connection = Connection::GetInstance();
@@ -75,7 +75,7 @@
                 foreach ($result as $row)
                 {
                     $room->setId($row["idRoom"]);
-                    $room->setIdCine($row["idCinema"]);
+                    $room->setIdCine($row["CinemaId"]);
                     $room->setRoomNumber($row["RoomNumber"]);
            
                     return $room;

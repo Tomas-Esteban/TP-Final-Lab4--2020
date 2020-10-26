@@ -94,6 +94,7 @@ class MoviesController
 			$idMovieIMDB = $_GET['IdMovieIMDB'];
 		} else {
 			$idMovieIMDB = 0;
+
 		}
 
 
@@ -107,10 +108,12 @@ class MoviesController
 
 	private function getInfoMovieApi($idMovieIMDB)
 	{
-		$arrayReque = array("api_key" => API_KEY, "language" => LANGUAGE_ES);
+		/*$arrayReque = array("api_key" => API_KEY, "language" => LANGUAGE_ES);
 
 		$get_data = IMDBController::callAPI('GET', API_MAIN_LINK . '/movie' . '/' . $idMovieIMDB, $arrayReque);
-		$arrayToDecode = json_decode($get_data, true);
+		echo "$get_data";
+		$arrayToDecode = json_decode($get_data, true);*/
+		$arrayToDecode = ApiResponse::HomologatesApiResponse('/movie/'.$idMovieIMDB);
 
 		$movies = new Movies();
 

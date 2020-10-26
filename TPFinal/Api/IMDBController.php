@@ -5,7 +5,7 @@ class IMDBController
 {    
    public static function callAPI($method, $url, $data)
    {
-      $curl = curl_init();
+     /* $curl = curl_init();
    
       switch ($method)
       {
@@ -47,7 +47,12 @@ class IMDBController
          die("Connection Failure");
       }
       curl_close($curl);
+      return $result;*/
+
+      $result = $method.$url.$data;
+      echo $result;
       return $result;
+   
    }
 }
 ?>
