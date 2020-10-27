@@ -4,9 +4,7 @@ namespace Controllers;
 
 use DAO\CinemaDAO as CinemaDAO;
 use DAO\RoomDAO as RoomDAO;
-
-use DAO\AddressDAO as AddressDAO; 
-
+use DAO\AddressDAO as addressDAO; 
 use Controllers\RoomController as RoomController;
 use Models\Movie as Movie;
 use Models\Cinema as Cinema;
@@ -15,7 +13,6 @@ use Exception;
 use Util\ApiResponse;
 use Util\Validate;
 use Controllers\HomeController as HomeController;
-
 use Models\Address as Address;
 
 
@@ -25,11 +22,13 @@ class CinemaController
 
     private $cinemaDAO;
     private $roomDAO;
+    private $addressDAO;
 
     function __construct()
     {
         $this->cinemaDAO = new CinemaDAO();
         $this->roomDAO = new RoomDAO();
+        $this->addressDAO =  new addressDAO();
        
     }
 
@@ -83,24 +82,15 @@ class CinemaController
             if ($this->cinemaDAO->getCinemaByName($cinemaName)) {
                 $this->ShowAddView("Cine ya existente");
             }
-            var_dump($cinemaName);
-            var_dump($address);
-            var_dump($number);
 
             $cinema = new Cinema();
             $addressAdd = new Address();
-            var_dump($cinema);
-            var_dump($addressAdd);
             $addressAdd->setIdAdress($id);
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
-            var_dump($addressAdd);
             $this->addressDAO->add($addressAdd);
-            var_dump($addressAdd);
             $cinema->setCinemaName($cinemaName);
-            $cinema->setNumber($number);
-            $cinema->setAddress($this->addressDAO->getIdFromDataBase($addressAdd));
-            
+            $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
             $this->cinemaDAO->add($cinema);
             RoomController::ShowAddView($cinema);
         } else {

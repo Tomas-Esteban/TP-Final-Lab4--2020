@@ -5,6 +5,7 @@ namespace DAO;
 use Models\User as User;
 use Models\Address as Address;
 use DAO\Connection as Connection;
+use DAO\QueryType as QueryType;
 
 class AddressDAO
 {
@@ -20,7 +21,7 @@ class AddressDAO
 
             foreach ($result as $row) {
                 $address = new Address();
-                $address->setIdAddress($row["IdAddress"]);
+                //$address->setIdAddress($row["IdAddress"]);
                 $address->setStreet($row["Street"]);
                 $address->setNumberStreet($row["NumberStreet"]);
 
@@ -34,15 +35,15 @@ class AddressDAO
     public function add($address){
        
         try{
-            $query = "INSERT INTO " . $this->stateTableName . " ( Street, NumberStreet) VALUES ( :Street, :NumberStreet);";
-            $this->connection = Connection::GetInstance();
-            $resultSet = $this->connection->Execute($query);
+            $query = "INSERT INTO " . $this->tableName . " (Street, NumberStreet) VALUES (:Street, :NumberStreet);";
+            /*$this->connection = Connection::GetInstance();
+            $resultSet = $this->connection->Execute($query);*/
 
             $parameters["Street"] = $address->getStreet();
             $parameters["NumberStreet"] = $address->getNumberStreet();
         
             $this->connection = Connection::GetInstance();
-            $this->connection->ExecuteNonQuery($query, $parameters);
+            $this->connection->ExecuteNonQuery($query, $parameters, QueryType::Query);
         
             return true;
         }
@@ -64,7 +65,7 @@ class AddressDAO
                 $address = new Address();
                 $address->setIdAddress($row["IdAddress"]);    
             }
-            return $address;
+            return $address->getIdAddress();
         }
         catch (Exception $ex) {
             throw $ex;
