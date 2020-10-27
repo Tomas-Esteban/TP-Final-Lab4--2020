@@ -11,15 +11,12 @@ class AddressDAO
     private $connection;
     private $tableName = "Addresses";
 
-
     public function GetAll()
     {
         $query = "SELECT * FROM " . $this->tableName . ";";
         $parameters = array();
         $this->connection = Connection::GetInstance();
         $result = $this->connection->Execute($query, $parameters, QueryType::Query);
-
-        try{
 
             foreach ($result as $row) {
                 $address = new Address();
@@ -30,11 +27,7 @@ class AddressDAO
                 array_push($parameters, $address);
             }
             return $parameters;
-        }
-        catch (Exception $ex) {
-            throw $ex;
-        }
-
+      
     }
 
 
@@ -65,7 +58,6 @@ class AddressDAO
         $parameters = array();
         $this->connection = Connection::GetInstance();
         $result = $this->connection->Execute($query, $parameters, QueryType::Query);
-
         try{
 
             foreach ($result as $row) {

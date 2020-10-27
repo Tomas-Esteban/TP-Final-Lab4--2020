@@ -76,21 +76,27 @@ class CinemaController
     {
         if (Validate::Logged() && Validate::AdminLog()) { /*<---------------------------------------------*/
 
-            $cinemaName =($cinemaName);
-            $address = ($address);
-            $number = ($number);
-            
+            $cinemaName =$cinemaName;
+            $address = $address;
+            $number = $number;
+            $id = 0;
             if ($this->cinemaDAO->getCinemaByName($cinemaName)) {
                 $this->ShowAddView("Cine ya existente");
             }
-            
+            var_dump($cinemaName);
+            var_dump($address);
+            var_dump($number);
+
             $cinema = new Cinema();
             $addressAdd = new Address();
-           
+            var_dump($cinema);
+            var_dump($addressAdd);
+            $addressAdd->setIdAdress($id);
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
+            var_dump($addressAdd);
             $this->addressDAO->add($addressAdd);
-
+            var_dump($addressAdd);
             $cinema->setCinemaName($cinemaName);
             $cinema->setNumber($number);
             $cinema->setAddress($this->addressDAO->getIdFromDataBase($addressAdd));
