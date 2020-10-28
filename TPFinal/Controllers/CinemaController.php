@@ -75,9 +75,7 @@ class CinemaController
     {
         if (Validate::Logged() && Validate::AdminLog()) { /*<---------------------------------------------*/
 
-            $cinemaName =$cinemaName;
-            $address = $address;
-            $number = $number;
+            
             $id = 0;
             if ($this->cinemaDAO->getCinemaByName($cinemaName)) {
                 $this->ShowAddView("Cine ya existente");
@@ -85,14 +83,19 @@ class CinemaController
 
             $cinema = new Cinema();
             $addressAdd = new Address();
-            $addressAdd->setIdAdress($id);
+          
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
             $this->addressDAO->add($addressAdd);
             $cinema->setCinemaName($cinemaName);
+
             $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
+        
             $this->cinemaDAO->add($cinema);
+            var_dump($this->cinemaDAO);
             RoomController::ShowAddView($cinema);
+            var_dump($cinema);
+            
         } else {
 
             HomeController::Index();

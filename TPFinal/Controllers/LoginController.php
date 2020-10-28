@@ -10,7 +10,6 @@ use Models\User as User;
 use Util\Validate as Validate;
 use Util\Hash as Hash;
 use Util\Random as Random;
-use Controllers\HomeController as HomeController;
 
 class LoginController
 {
@@ -38,7 +37,7 @@ class LoginController
                     if($selectedUser[0]['IsAdmin']){
                         $_SESSION['isAdmin'] = true;
                     }
-                    HomeController::Index();
+                    HomeController :: Index();
                 } else {
                     $this->View("Email o contraseña incorrecta");
                 }

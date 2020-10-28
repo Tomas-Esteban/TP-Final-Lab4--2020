@@ -56,8 +56,8 @@ require_once("navbar.php");
                             <input type="text" class="form-control" id="inputNombre" name="address" placeholder="Dirección">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Número</label>
-                            <input type="number" class="form-control" id="inputNombre" name="number" placeholder="Número">
+                            <label for="inputNumber"><i style="color: red;">&#42&nbsp</i>Número</label>
+                            <input type="number" class="form-control" id="inputNumber" name="number" placeholder="Número">
                         </div>                        
                     </div>                    
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspSiguiente</button>

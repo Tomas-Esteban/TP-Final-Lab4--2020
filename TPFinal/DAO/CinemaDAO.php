@@ -4,22 +4,24 @@ namespace DAO;
 
 use DAO\Connection as Connection;
 use Models\cinema as cinema;
-
+use DAO\QueryType as QueryType;
 class cinemaDAO
 {
 	private $connection;
 	private $tableName = "cinemas";
-
+	private $parameters = array();
 	public function Add($cinema)
 	{
 		try {
 			$query = "INSERT INTO " . $this->tableName . " (CinemaName, IdAddress) VALUES (:CinemaName, :IdAddress);";
 
-			$parameters["CinemaName"] = $cinema->getcinemaName();
+			$parameters["CinemaName"] = $cinema->getCinemaName();
 			$parameters["IdAddress"] = $cinema->getAddress();
-			$this->connection = Connection::GetInstance();
-			$this->connection->ExecuteNonQuery($query, $parameters);
-			return true;
+			
+			$this->$connection = Connection::GetInstance();
+			$result = $this->$connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
+			
+			return $result;
 		} catch (Exception $ex) {
 			throw $ex;
 		}
@@ -35,7 +37,7 @@ class cinemaDAO
 			$parameters["IdCinema"] = $cinema->getIdCinema();
 
 			$this->connection = Connection::GetInstance();
-			$this->connection->ExecuteNonQuery($query);
+			$this->connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
 		} catch (Exception $ex) {
 			return null;
 		}
@@ -68,7 +70,8 @@ class cinemaDAO
 		try {
 			$query = "SELECT * FROM " . $this->tableName . " WHERE idCinema = " . $cinema->getIdCinema() . ";";
 			$this->connection = Connection::GetInstance();
-			$result = $this->connection->Execute($query);
+			//$result = $this->connection->execute($query);
+			$result = $this->connection->exec($query);
 
 			foreach ($result as $row) {
 				$cinema->setIdCinema($row["IdCinema"]);
@@ -110,7 +113,7 @@ class cinemaDAO
 				$cinema = new Cinema();
 				$cinema->setIdCinema($row["IdCinema"]);
 				$cinema->setCinemaName($row["CinemaName"]);
-				$cinema->setIdAddress($row["IdAdress"]);
+				$cinema->setAddress($row["IdAddress"]);
 				return $cinema;
 			}
 		} catch (Exception $ex) {

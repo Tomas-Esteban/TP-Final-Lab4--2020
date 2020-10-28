@@ -2,6 +2,7 @@
 
 namespace DAO;
 
+use \PDO as PDO;
 use Models\User as User;
 use Models\Address as Address;
 use DAO\Connection as Connection;
@@ -10,7 +11,7 @@ use DAO\QueryType as QueryType;
 class AddressDAO
 {
     private $connection;
-    private $tableName = "Addresses";
+    private $tableName = "addresses";
 
     public function GetAll()
     {
@@ -33,39 +34,40 @@ class AddressDAO
 
 
     public function add($address){
-       
-        try{
-            $query = "INSERT INTO " . $this->tableName . " (Street, NumberStreet) VALUES (:Street, :NumberStreet);";
-            /*$this->connection = Connection::GetInstance();
-            $resultSet = $this->connection->Execute($query);*/
 
-            $parameters["Street"] = $address->getStreet();
-            $parameters["NumberStreet"] = $address->getNumberStreet();
+        $street = $address->getStreet();
+        $numberStreet = $address->getNumberStreet();
+        $array = array();
         
-            $this->connection = Connection::GetInstance();
-            $this->connection->ExecuteNonQuery($query, $parameters, QueryType::Query);
+        $query = "INSERT INTO ". $this->tableName . "(Street,numberStreet) VALUES (:street,:numberStreet);";
         
-            return true;
-        }
-        
-        catch (Exception $ex) {
-        throw $ex;
-        }
-    }
+        $parameters["street"] = $street;
+        $parameters["numberStreet"] = $numberStreet;
+
+        $this->connection = Connection::GetInstance();
+        $this->connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
+
+        return $this->getIdFromDataBase($street, $numberStreet);
+}
+
 
     public function getIdFromDataBase($street, $numberStreet){
-        
-        $query = "SELECT * FROM " . $this->tableName . " WHERE Street = " . $street . " and  NumberStreet = " . $numberStreet . " ;";
+                                                    //WHERE (Email = :Email) AND UserPassword = :UserPassword;
+        $query = "SELECT * FROM " . $this->tableName . " WHERE Street = :street AND  NumberStreet = :numberStreet ;";
         $parameters = array();
+
+        $parameters["street"] = $street;
+        $parameters["numberStreet"] = $numberStreet;
         $this->connection = Connection::GetInstance();
-        $result = $this->connection->Execute($query, $parameters, QueryType::Query);
+        $result = $this->connection->Execute($query,$parameters,QueryType::Query);
+    
         try{
 
             foreach ($result as $row) {
                 $address = new Address();
-                $address->setIdAddress($row["IdAddress"]);    
+                $address->setIdAdress($row["IdAddress"]);
             }
-            return $address->getIdAddress();
+            return $address->getIdAdress();
         }
         catch (Exception $ex) {
             throw $ex;

@@ -45,7 +45,7 @@ class Address
          */ 
         public function setIdAdress($idAdress)
         {
-                $this->idAdress = ++$idAdress;
+                $this->idAdress = $idAdress;
 
                 return $this;
         }
