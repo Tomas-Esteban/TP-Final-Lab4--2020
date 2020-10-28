@@ -37,12 +37,11 @@
             }
          
         }
-        public function ShowAddView($cinema)
+        public function ShowAddView()
         {  
-            
             if(Validate::Logged() && Validate::AdminLog())
             {
-                require_once(VIEWS_PATH . "room-add.php");
+                require_once(VIEWS_PATH . "AddRoomView.php");
             }
             else
             {

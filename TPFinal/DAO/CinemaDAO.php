@@ -7,7 +7,7 @@ use Models\cinema as cinema;
 use DAO\QueryType as QueryType;
 class cinemaDAO
 {
-	private $connection;
+
 	private $tableName = "cinemas";
 	private $parameters = array();
 	public function Add($cinema)
@@ -18,8 +18,8 @@ class cinemaDAO
 			$parameters["CinemaName"] = $cinema->getCinemaName();
 			$parameters["IdAddress"] = $cinema->getAddress();
 			
-			$this->$connection = Connection::GetInstance();
-			$result = $this->$connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
+			$connection = Connection::GetInstance();
+			$result = $connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
 			
 			return $result;
 		} catch (Exception $ex) {

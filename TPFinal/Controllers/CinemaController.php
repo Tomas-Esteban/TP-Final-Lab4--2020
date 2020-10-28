@@ -83,6 +83,7 @@ class CinemaController
 
             $cinema = new Cinema();
             $addressAdd = new Address();
+            $view = new RoomController();
           
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
@@ -92,9 +93,9 @@ class CinemaController
             $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
         
             $this->cinemaDAO->add($cinema);
-            var_dump($this->cinemaDAO);
-            RoomController::ShowAddView($cinema);
-            var_dump($cinema);
+            
+            $view->ShowAddView();
+            var_dump($view);
             
         } else {
 
