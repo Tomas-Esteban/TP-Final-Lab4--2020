@@ -36,8 +36,8 @@ class cinemaDAO
 
 			$parameters["IdCinema"] = $cinema->getIdCinema();
 
-			$this->connection = Connection::GetInstance();
-			$this->connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
+			$connection = Connection::GetInstance();
+			$result = $connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
 		} catch (Exception $ex) {
 			return null;
 		}
@@ -48,8 +48,8 @@ class cinemaDAO
 		try {
 			$cinemaList = array();
 			$query = "SELECT * FROM " . $this->tableName;
-			$this->connection = Connection::GetInstance();
-			$result = $this->connection->Execute($query);
+			$connection = Connection::GetInstance();
+			$result = $connection->Execute($query);
 
 			foreach ($result as $row) {
 				$cinema = new Cinema();
@@ -69,9 +69,9 @@ class cinemaDAO
 
 		try {
 			$query = "SELECT * FROM " . $this->tableName . " WHERE idCinema = " . $cinema->getIdCinema() . ";";
-			$this->connection = Connection::GetInstance();
+			$connection = Connection::GetInstance();
 			//$result = $this->connection->execute($query);
-			$result = $this->connection->exec($query);
+			$result = $connection->exec($query);
 
 			foreach ($result as $row) {
 				$cinema->setIdCinema($row["IdCinema"]);
@@ -93,8 +93,8 @@ class cinemaDAO
 			$parameters["CinemaName"] = $cinema->getCinemaName();
 			$parameters["IdAddress"] = $cinema->getAddress();
 
-			$this->connection = Connection::GetInstance();
-			$this->connection->ExecuteNonQuery($query, $parameters);
+			$connection = Connection::GetInstance();
+			$result = $connection->ExecuteNonQuery($query, $parameters);
 			return true;
 		} catch (Exception $ex) {
 			return null;
@@ -105,9 +105,8 @@ class cinemaDAO
 		try {
 			$query = "SELECT * FROM " . $this->tableName . " WHERE CinemaName = '" . $cinema . "';";
 
-			$this->connection = Connection::GetInstance();
-
-			$result = $this->connection->Execute($query);
+			$connection = Connection::GetInstance();
+			$result = $connection->Execute($query);
 
 			foreach ($result as $row) {
 				$cinema = new Cinema();

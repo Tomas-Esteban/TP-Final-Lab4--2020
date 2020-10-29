@@ -13,24 +13,24 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/banner1.jpg" class="d-block w-100" alt="...">
+                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/LasBrujas.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Malefica</h5>
-                            <p>Angelina Jolie interpreta a la hada de grandes cuernos, quien es traicionada por su gran amor y que actúa movida por el dolor.</p>
+                            <h5>Las Brujas</h5>
+                            <p>Basada en el libro clásico de Roald Dahl 'Las brujas', la historia cuenta la aterradora, divertida e imaginativa historia de un niño de siete años que se encuentra con una congregación de brujas liderada por la Gran Bruja. A pesar de que su abuela se lo llevó a un centro turístico, llegan al mismo tiempo que ella y sus amigos llegan para comenzar sus rituales.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/banner2.jpg" class="d-block w-100" alt="...">
+                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/Borat.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Joker</h5>
-                            <p>La pasión de Arthur Fleck, un hombre ignorado por la sociedad, es hacer reír a la gente. Una serie de trágicos sucesos lo convertiran en un brillante criminal.</p>
+                            <h5>Borat Subsequent Moviefilm </h5>
+                            <p>Borat, el exuberante, ingenuo y atrasado periodista kazajo fanático de los Estados Unidos, se propone realizar un documental sobre ese país. Borat se pone en marcha en busca de figuras políticas estadounidenses para elaborar con ellas una evaluación de la presidencia de Trump y su gestión de la crisis del coronavirus en el país. criminal.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/banner3.jpg" class="d-block w-100" alt="...">
+                        <img src="<?php echo FRONT_ROOT.VIEWS_PATH?>img/2067.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Avengers: EndGame</h5>
-                            <p>Los Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un enfrentamiento épico con Thanos.</p>
+                            <h5>2067</h5>
+                            <p>El viaje de un hombre hacia el futuro para salvar un mundo moribundo.</p>
                         </div>
                     </div>
                 </div>
