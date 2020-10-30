@@ -21,35 +21,6 @@ require_once("navbar.php");
                             <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="cinemaName">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputPais"><i style="color: red;">&#42&nbsp</i>Pais</label>
-                            <select id="inputPais" class="form-control" name="countryName">
-                                <?php foreach ($countryList as $country) {?>
-                                <option selected>Elije uno</option>
-                                <option><?php echo $country->getCountryName() ?></option>
-                                <?php }?> 
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputProvincia"><i style="color: red;">&#42&nbsp</i>Provincia</label>
-                            <select id="inputProvincia" class="form-control" name="stateName">
-                            <?php foreach ($stateList as $state) {?>
-                                <option selected>Elije una</option>
-                                <option><?php echo $state->getStateName() ?></option>
-                                <?php }?> 
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputCiudad"><i style="color: red;">&#42&nbsp</i>Ciudad</label>
-                            <select id="inputCiudad" class="form-control" name="cityName">
-                            <?php foreach ($cityList as $city) {?>
-                                <option selected>Elije una</option>
-                                <option><?php echo $city->getCityName() ?></option>
-                                <?php }?> 
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Dirección</label>

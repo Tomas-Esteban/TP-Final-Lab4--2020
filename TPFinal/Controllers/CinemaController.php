@@ -65,7 +65,7 @@ class CinemaController
 
         if (Validate::Logged() && Validate::AdminLog()) {
 
-            require_once(VIEWS_PATH . "EditCiinemaView.php");
+            require_once(VIEWS_PATH . "EditCinemaView.php");
         } else {
             HomeController::Index();
         }
@@ -88,12 +88,16 @@ class CinemaController
             $addressAdd->setStreet($address);
             $addressAdd->setNumberStreet($number);
             $this->addressDAO->add($addressAdd);
-            $cinema->setCinemaName($cinemaName);
-
-            $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
-        
-            $this->cinemaDAO->add($cinema);
             
+            $cinema->setCinemaName($cinemaName);
+            $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
+            $this->cinemaDAO->add($cinema);
+
+            $id = $this->cinemaDAO->GetIdLastCinema($cinemaName);
+            echo $id;
+            
+            $_SESSION["LastIdCinema"] = $id; 
+
             $view->ShowAddView();
             var_dump($view);
             

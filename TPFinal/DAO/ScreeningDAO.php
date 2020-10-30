@@ -58,7 +58,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 {
                     $screening = new Screening();
                     $screening->setIdScreening($row["IdScreening"]);
-		    $screening->setIdMovie($row["IdMovie"]);
+		            $screening->setIdMovie($row["IdMovie"]);
                     $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                     $screening->setStartDate($row["StartDate"]);
                     $screening->setLastDate($row["LastDate"]);
@@ -95,7 +95,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                     
                 $screening = new Screening();
                 $screening->setIdScreening($row["IdScreening"]);
-		$screening->setIdMovie($row["IdMovie"]);
+		        $screening->setIdMovie($row["IdMovie"]);
                 $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                 $screening->setStartDate($row["StartDate"]);
                 $screening->setLastDate($row["LastDate"]);
@@ -170,7 +170,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
             if($resultSet == null){
                 $screening = new Screening();
                 $screening->setIdScreening("-");
-		$screening->setIdMovie($movies->getIdMovie());
+		        $screening->setIdMovie($movies->getIdMovie());
                 $screening->setIdMovieIMDB($movies->getIdMovieIMDB());
                 $screening->setStartDate("-");
                 $screening->setLastDate("-");
@@ -193,7 +193,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                   
                         $screening = new Screening();
                         $screening->setIdScreening($row["IdScreening"]);
-			$screening->setIdMovie($row["IdMovie"]);
+			            $screening->setIdMovie($row["IdMovie"]);
                         $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                         $screening->setStartDate($row["StartDate"]);
                         $screening->setLastDate($row["LastDate"]);
@@ -229,7 +229,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
             {
                 $screening = new Screening();
                 $screening->setIdScreening($row["IdScreening"]);
-		$screening->setIdMovie($row["IdMovie"]);
+		        $screening->setIdMovie($row["IdMovie"]);
                 $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                 $screening->setMovieName($row["MovieName"]);
                 $screening->setDuration($row["Duration"]);
@@ -281,7 +281,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 $date = date("Y-m-d",strtotime($date ."+ 1 days"));
 
                 $newScreening->setIdScreening($screening->getIdScreening());
-		$newScreening->setIdMovie($screening->getIdMovie());
+		        $newScreening->setIdMovie($screening->getIdMovie());
                 $newScreening->setIdMovieIMDB($screening->getIdMovieIMDB());
                 $newScreening->setStartDate($date);
                 $newScreening->setLastDate($screening->getLastDate());
@@ -312,7 +312,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                     
                 $screening = new Screening();
                 $screening->setIdScreening($row["IdScreening"]);
-		$screening->setIdMovie($row["IdMovie"]);
+		        $screening->setIdMovie($row["IdMovie"]);
                 $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                 $screening->setStartDate($row["StartDate"]);
                 $screening->setLastDate($row["LastDate"]);
@@ -344,7 +344,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                         
                 $screening = new Screening();
                 $screening->setIdScreening($row["IdScreening"]);
-		$screening->setIdMovie($row["IdMovie"]);
+		        $screening->setIdMovie($row["IdMovie"]);
                 $screening->setIdMovieIMDB($row["IdMovieIMDB"]);
                 $screening->setStartDate($row["StartDate"]);
                 $screening->setLastDate($row["LastDate"]);

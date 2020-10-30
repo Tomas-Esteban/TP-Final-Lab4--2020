@@ -20,7 +20,7 @@ class cinemaDAO
 			
 			$connection = Connection::GetInstance();
 			$result = $connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
-			
+			//$id = $connection->sqlite_last_insert_rowid();
 			return $result;
 		} catch (Exception $ex) {
 			throw $ex;
@@ -63,7 +63,18 @@ class cinemaDAO
 			return null;
 		}
 	}
-
+	
+	public function GetIdLastCinema($cinema)
+	{
+		try {
+			$cine =	$this->getCinemaByName($cinema);
+			$id = $cine->getIdCinema();
+			return $id;
+		} catch (Exception $ex) {
+			return null;
+		}
+	}
+		
 	public function GetCineById($cinema)
 	{
 
@@ -118,5 +129,13 @@ class cinemaDAO
 		} catch (Exception $ex) {
 			return null;
 		}
+	}
+	public function getLastIdCinema($cinema){
+
+
+
+
+
+
 	}
 }

@@ -19,7 +19,7 @@
             $this->cinemaDAO = new CinemaDAO();
             
         }
-        public function Add($cinema, $roomNumber)
+        public function Add( $roomNumber)
         {
            
             if(Validate::Logged() && Validate::AdminLog())
@@ -28,13 +28,18 @@
 
             $room = new Room();
             $room->setRoomNumber($roomNumber);
-            $room->setIdCinema($cinema->getIdCinema());
+            
+            $room->setIdCinema($_SESSION["LastIdCinema"]);
             $this->roomDAO->Add($room); 
+            
+            HomeController:: Index();
+            
             }
             else
             {
                 HomeController:: Index();
             }
+            unset($_SESSION["LastIdCinema"]);
          
         }
         public function ShowAddView()
