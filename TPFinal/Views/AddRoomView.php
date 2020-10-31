@@ -1,6 +1,7 @@
 <?php 
 
 require_once("navbar.php");
+use Controllers\CinemaController as cinemaController;
 ?> 
 
 <body>
@@ -13,7 +14,23 @@ require_once("navbar.php");
             <!-- form     -->
             <div class="col-md-10">
 
-                <form action = "<?php echo FRONT_ROOT ?>Room/Add" method="post">
+                <form action = "<?php echo FRONT_ROOT ?>Room/AddMoreRoom" method="post">
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-md-6">
+                            <label for="inputCine"><i style="color: red;">&#42&nbsp</i>Nombre de cine</label>
+                            <select id="inputCine" class="form-control" name = "Cines">
+                                    <option value= "<?php ?>">Selecciona el Cine:</option>
+                                    <?php 
+                                    $cine = new cinemaController();
+                                    $cinemaList = $cine->GetAll();
+                                        foreach($cinemaList as $cine) { ?>
+                                            <option value="1"><?php echo $cine->getCinemaName(); ?></option>
+                                        <?php } ?>
+                
+                            </select>
+
+                        </div>
+                    </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNumber"><i style="color: red;">&#42&nbsp</i>Numero de sala</label>

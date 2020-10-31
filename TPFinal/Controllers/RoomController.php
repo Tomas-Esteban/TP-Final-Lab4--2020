@@ -29,9 +29,12 @@
             $room = new Room();
             $room->setRoomNumber($roomNumber);
             
-            $room->setIdCinema($_SESSION["LastIdCinema"]);
-            $this->roomDAO->Add($room); 
-            
+                if($_SESSION["LastIdCinema"]){
+                    $room->setIdCinema($_SESSION["LastIdCinema"]);
+                    $this->roomDAO->Add($room); 
+                    unset($_SESSION["LastIdCinema"]);
+                }
+
             HomeController:: Index();
             
             }
@@ -39,7 +42,26 @@
             {
                 HomeController:: Index();
             }
-            unset($_SESSION["LastIdCinema"]);
+            
+        }
+        public function AddMoreRoom($id, $roomNumber)
+        {
+           
+            if(Validate::Logged() && Validate::AdminLog())
+            {
+            $roomNumber = Validate::ValidateData($roomNumber);
+
+            $room = new Room();
+            $room->setRoomNumber($roomNumber);
+            $room->setIdCinema($id);
+            $this->roomDAO->Add($room); 
+            HomeController:: Index();
+            }
+            else
+            {
+                HomeController:: Index();
+            }
+            
          
         }
         public function ShowAddView()
