@@ -40,7 +40,7 @@ class CinemaController
 
             $cinemaList =  $this->GetAll();
 
-            require_once(VIEWS_PATH . "AddCinemaView.php");
+            require_once(VIEWS_PATH . "cinema-list.php");
 
         } else {
             
@@ -99,7 +99,6 @@ class CinemaController
             $_SESSION["LastIdCinema"] = $id; 
 
             $view->ShowAddView();
-            var_dump($view);
             
         } else {
 
@@ -116,9 +115,13 @@ class CinemaController
             $cinema->setIdCinema($idCinema);
             $this->cinemaDAO->remove($cinema);
 
-            /* if ($this->cineDAO->remove($cinema)) Functions::flash("El cine se ha eliminado correctamente.","success");
-         else Functions::flash("Hubo un error al eliminar el cine.");
-         Functions::redirect("Cine","ShowListView");*/
+             if ($this->cineDAO->remove($cinema)){
+                Functions::flash("El cine se ha eliminado correctamente.","success");
+             } 
+            else {
+                Functions::flash("Hubo un error al eliminar el cine.");
+            }
+            Functions::redirect("Cine","ShowListView");
 
             $this->ShowListView();
         } else {

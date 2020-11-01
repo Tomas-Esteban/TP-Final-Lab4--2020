@@ -28,12 +28,11 @@
 
             $room = new Room();
             $room->setRoomNumber($roomNumber);
-            
-                if($_SESSION["LastIdCinema"]){
-                    $room->setIdCinema($_SESSION["LastIdCinema"]);
-                    $this->roomDAO->Add($room); 
-                    unset($_SESSION["LastIdCinema"]);
-                }
+            if($_SESSION["LastIdCinema"]){
+                $room->setIdCinema($_SESSION["LastIdCinema"]);
+                $this->roomDAO->Add($room); 
+                unset($_SESSION["LastIdCinema"]);
+            }
 
             HomeController:: Index();
             

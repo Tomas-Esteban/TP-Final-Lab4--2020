@@ -19,14 +19,13 @@ use Controllers\CinemaController as cinemaController;
                         <div class="form-group col-md-6">
                             <label for="inputCine"><i style="color: red;">&#42&nbsp</i>Nombre de cine</label>
                             <select id="inputCine" class="form-control" name = "Cines">
-                                    <option value= "<?php ?>">Selecciona el Cine:</option>
+                                    <option value= "1">Selecciona el Cine:</option>
                                     <?php 
                                     $cine = new cinemaController();
                                     $cinemaList = $cine->GetAll();
                                         foreach($cinemaList as $cine) { ?>
-                                            <option value="1"><?php echo $cine->getCinemaName(); ?></option>
+                                            <option value="<?php echo $cine->getIdCinema(); ?>" > <?php echo $cine->getCinemaName(); ?></option>
                                         <?php } ?>
-                
                             </select>
 
                         </div>
