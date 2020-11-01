@@ -320,7 +320,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 $screening->setIdCinema($row["IdCinema"]);
                 $screening->setDimension($row["Dimension"]);
                 $screening->setAudio($row["Audio"]);
-                $screning->setPrice($row["Price"]);
+                $screening->setPrice($row["Price"]);
                 $screening->setSubtitles($row["Subtitles"]);
                 $screening->setStartHour($parameters["StartHour"]);
                 $screening->setFinishHour($row["FinishHour"]);

@@ -111,15 +111,17 @@
                             <?php } ?>
                             </select>
                         </div>  
-                        <div class="form-group col-md-12">
-                            <label for="inputSala"><i style="color: red;">&#42&nbsp</i>Sala</label>
-                            <select id="inputSala" name="inputSala" class="form-control">
-                            <option selected>Elije una</option>
-                            <?php foreach ($rooms as $room) {?>
-                            <option value="<?php echo $room->getIdRoom();?>"  ><?php echo $room->getRoomNumber();?></option>
-                            <?php } ?>
-                            </select>
-                        </div>                
+                        
+                            <div class="form-group col-md-12">
+                                <label for="inputSala"><i style="color: red;">&#42&nbsp</i>Sala</label>
+                                <select id="inputSala" name="inputSala" class="form-control">
+                                <option selected>Elije una</option>
+                                <?php foreach ($rooms as $room) {?>
+                                    <option value="<?php echo $room->getIdRoom();?>"  ><?php echo $room->getRoomNumber();?></option>
+                                    <?php }?>
+                                </select>
+                        
+                        </div>
                     </div>
                     <div class="form-group">      
                         <label for="inputDimension"><i style="color: red;">&#42&nbsp</i>Dimensión</label>

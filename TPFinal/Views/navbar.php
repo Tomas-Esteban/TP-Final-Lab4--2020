@@ -15,19 +15,19 @@
         if(isset($_SESSION['isAdmin'])){
           echo '<ul class="navbar-nav mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="'; echo FRONT_ROOT. 'Home/View"><i class="fas fa-home"></i>&nbspInicio</a>
+              <a class="nav-link" href="'; echo FRONT_ROOT. 'Home/View"><i class="fas fa-home"></i>&nbspInicio</a>  
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="';echo FRONT_ROOT. 'Movies/ShowApiMovies"><i class="fas fa-film"></i>&nbspCartelera</a>
+              <a class="nav-link" href="';echo FRONT_ROOT. 'Movies/ShowApiMovies"><i class="fas fa-film"></i>&nbspAgregar Peliculas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowAddView" tabindex="-1" aria-disabled="true"><i class="fas fa-id-card"></i>&nbspCines</a>
+              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowAddView" tabindex="-1" aria-disabled="true"><i class="fa fa-video-camera" aria-hidden="true"></i>&nbspAgregar cines</a>
             </li>
             <li class="nav-item"></li>
-              <a class="nav-link" href="';echo FRONT_ROOT. 'Room/ShowAddView" tabindex="-1" aria-disabled="true"><i class="fas fa-id-card"></i>&nbspSalas</a>
+              <a class="nav-link" href="';echo FRONT_ROOT. 'Room/ShowAddView" tabindex="-1" aria-disabled="true"><i class="fas fa-chair"></i>&nbspAgregar salas</a>
             </li>
             <li class="nav-item"></li>
-              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowListView" tabindex="-1" aria-disabled="true"><i class="fas fa-id-card"></i>&nbspLista Cines</a>
+              <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowListView" tabindex="-1" aria-disabled="true"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbspListado de Cines</a>
             </li>
           </ul>';
 

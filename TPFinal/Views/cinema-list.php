@@ -12,8 +12,8 @@
         <div class="col-md-4 ml-auto">    
                 <?php foreach($cinemaList as $cine) { ?> 
                 <p> <?php echo $cine->getCinemaName(); ?> </p> 
-                <p><a id="editCinema" href = "<?php echo FRONT_ROOT ?> Cinema/ShowEditView"></a><button class="button">Editar</a></button></p>
-                <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Cinema/Remove"></a><button class="button">Borrar</a></button></p>
+                <p><a id="editCinema" href = "<?php echo FRONT_ROOT ?> Cinema/ShowEditView"></a><button class="button" type="submit">Editar</a></button></p>
+                <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Cinema/Remove"></a><button class="button" type="submit">Borrar</a></button></p>
                 <?php } ?>
         </div>    
     </div>
