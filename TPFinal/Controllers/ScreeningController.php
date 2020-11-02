@@ -74,14 +74,17 @@ class ScreeningController{
 			$screening->setAudio($_GET['audio']);
 			$screening->setPrice($_GET['price']);
 			$screening->setSubtitles($_GET['subtitulos']);
-
+			
 			$screeningsXday = array();
 			$screeningsXday = $this->screeningDAO->distinctScreeningPerDay($screening);
-
+			
 			foreach($screeningsXday as $dateScreening){
 			
-				if($this->screeningDAO->validateScreening($dateScreening)){
+				if($this->screeningDAO->validateScreening($dateScreening) == true){
 					$this->screeningDAO->add($dateScreening);
+				}
+				else if($screeningsXday == NULL){
+					echo "No valida";
 				}
 				else echo "La existe una función a esa hora";
 			}

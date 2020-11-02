@@ -268,8 +268,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
             }
         }
 
-        //public function existFunction($idCinema,$idRoom,$startDate)
-
+        
         public function distinctScreeningPerDay($screening){
 
             $screeningList = array();
@@ -278,7 +277,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
 
             while($screening->getLastDate()> $date){
                 $newScreening = new Screening();
-                $date = date("Y-m-d",strtotime($date ."+ 1 days"));
+                $date = date("Y-m-d", strtotime($date ."+ 1 days"));
 
                 $newScreening->setIdScreening($screening->getIdScreening());
 		        $newScreening->setIdMovie($screening->getIdMovie());
@@ -322,7 +321,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 $screening->setAudio($row["Audio"]);
                 $screening->setPrice($row["Price"]);
                 $screening->setSubtitles($row["Subtitles"]);
-                $screening->setStartHour($parameters["StartHour"]);
+                $screening->setStartHour($row["StartHour"]);
                 $screening->setFinishHour($row["FinishHour"]);
                 return $screening;
                 }
@@ -370,13 +369,16 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
         $screeningList = array();
         $screeningList = $this->GetScreeningByIdRoom($screening->getIdRoom());
         $exist = true;
-        foreach($screeningList as $value){
-            if($value->getStartDate()==$screening->getStartDate()){
-                if($value->getStartHour()==$screening->getStartHour()){
+       
+        foreach($screeningList as $value){    
+            if($value->getStartDate() == $screening->getStartDate()){
+                echo "Entra en el if StartDate";
+                if($value->getStartHour() == $screening->getStartHour()){
                     $exist=false;
+                echo "Entra en el if StartHour";
                 }
             }
         }
-
+        return $exist;
     }
 }
