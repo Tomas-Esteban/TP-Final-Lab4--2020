@@ -21,8 +21,6 @@ use Controllers\CinemaController as cinemaController;
                             <select id="inputCine" class="form-control" name = "Cines">
                                     <option value= "1">Selecciona el Cine:</option>
                                     <?php 
-                                    $cine = new cinemaController();
-                                    $cinemaList = $cine->GetAll();
                                         foreach($cinemaList as $cine) { ?>
                                             <option value="<?php echo $cine->getIdCinema(); ?>" > <?php echo $cine->getCinemaName(); ?></option>
                                         <?php } ?>

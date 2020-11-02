@@ -45,10 +45,9 @@ create table Addresses (
 create table Cinemas (
     IdCinema int AUTO_INCREMENT,
     CinemaName varchar(50) not null,
-    IdAddress int not null,
+    Street varchar(100) not null,
     constraint Pk_Cinema primary key (IdCinema),
-    constraint Fk_Address foreign key (IdAddress)
-        references Addresses (IdAddress)
+    
 );
 
 create table NonWorkDays (

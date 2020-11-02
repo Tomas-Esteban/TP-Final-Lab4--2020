@@ -5,22 +5,24 @@ namespace DAO;
 use DAO\Connection as Connection;
 use Models\cinema as cinema;
 use DAO\QueryType as QueryType;
+
 class cinemaDAO
 {
 
 	private $tableName = "cinemas";
 	private $parameters = array();
+
 	public function Add($cinema)
 	{
 		try {
-			$query = "INSERT INTO " . $this->tableName . " (CinemaName, IdAddress) VALUES (:CinemaName, :IdAddress);";
+			$query = "INSERT INTO " . $this->tableName . " (CinemaName, Address) VALUES (:CinemaName, :Address);";
 
 			$parameters["CinemaName"] = $cinema->getCinemaName();
-			$parameters["IdAddress"] = $cinema->getAddress();
+			$parameters["Address"] = $cinema->getAddress();
 			
 			$connection = Connection::GetInstance();
 			$result = $connection->ExecuteNonQuery($query,$parameters,QueryType::Query);
-			//$id = $connection->sqlite_last_insert_rowid();
+	
 			return $result;
 		} catch (Exception $ex) {
 			throw $ex;
@@ -55,7 +57,7 @@ class cinemaDAO
 				$cinema = new Cinema();
 				$cinema->setIdCinema($row["IdCinema"]);
 				$cinema->setCinemaName($row["CinemaName"]);
-				$cinema->setAddress($row["IdAddress"]);
+				$cinema->setAddress($row["Address"]);
 				array_push($cinemaList, $cinema);
 			}
 			return $cinemaList;
@@ -98,11 +100,11 @@ class cinemaDAO
 	public function UpdateCinema($cinema)
 	{
 		try {
-			$query = "UPDATE " . $this->tableName . " SET IdCinema = :IdCinema, CinemaName = :CinemaName, IdAddress = :IdAddress WHERE IdCinema =" . $cinema->getIdCinema() . ";";
+			$query = "UPDATE " . $this->tableName . " SET IdCinema = :IdCinema, CinemaName = :CinemaName, Address = :Address WHERE IdCinema =" . $cinema->getIdCinema() . ";";
 
 			$parameters["IdCinema"] = $cinema->getIdCinema();
 			$parameters["CinemaName"] = $cinema->getCinemaName();
-			$parameters["IdAddress"] = $cinema->getAddress();
+			$parameters["Address"] = $cinema->getAddress();
 
 			$connection = Connection::GetInstance();
 			$result = $connection->ExecuteNonQuery($query, $parameters);
@@ -123,7 +125,7 @@ class cinemaDAO
 				$cinema = new Cinema();
 				$cinema->setIdCinema($row["IdCinema"]);
 				$cinema->setCinemaName($row["CinemaName"]);
-				$cinema->setAddress($row["IdAddress"]);
+				$cinema->setAddress($row["Address"]);
 				return $cinema;
 			}
 		} catch (Exception $ex) {

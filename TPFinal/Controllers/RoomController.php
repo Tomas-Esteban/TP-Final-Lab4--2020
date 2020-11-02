@@ -65,6 +65,8 @@
         }
         public function ShowAddView()
         {  
+            $cine = new cinemaController();
+            $cinemaList = $cine->GetAll();
             if(Validate::Logged() && Validate::AdminLog())
             {
                 require_once(VIEWS_PATH . "AddRoomView.php");

@@ -13,8 +13,6 @@ use Exception;
 use Util\ApiResponse;
 use Util\Validate;
 use Controllers\HomeController as HomeController;
-use Models\Address as Address;
-
 
 
 class CinemaController
@@ -22,14 +20,13 @@ class CinemaController
 
     private $cinemaDAO;
     private $roomDAO;
-    private $addressDAO;
+    
 
     function __construct()
     {
         $this->cinemaDAO = new CinemaDAO();
         $this->roomDAO = new RoomDAO();
-        $this->addressDAO =  new addressDAO();
-       
+        
     }
 
 
@@ -40,7 +37,7 @@ class CinemaController
 
             $cinemaList =  $this->GetAll();
 
-            require_once(VIEWS_PATH . "cinema-list.php");
+            require_once(VIEWS_PATH . "CinemaList.php");
 
         } else {
             
@@ -71,7 +68,7 @@ class CinemaController
         }
     }
 
-    public function Add($cinemaName, $address,$number)
+    public function Add($cinemaName, $address)
     {
         if (Validate::Logged() && Validate::AdminLog()) { /*<---------------------------------------------*/
 
@@ -82,15 +79,10 @@ class CinemaController
             }
 
             $cinema = new Cinema();
-            $addressAdd = new Address();
             $view = new RoomController();
-          
-            $addressAdd->setStreet($address);
-            $addressAdd->setNumberStreet($number);
-            $this->addressDAO->add($addressAdd);
-            
+
             $cinema->setCinemaName($cinemaName);
-            $cinema->setAddress($this->addressDAO->getIdFromDataBase($address,$number));
+            $cinema->setAddress($address);
             $this->cinemaDAO->add($cinema);
 
             $id = $this->cinemaDAO->GetIdLastCinema($cinemaName);
