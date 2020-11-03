@@ -132,12 +132,5 @@ class cinemaDAO
 			return null;
 		}
 	}
-	public function getLastIdCinema($cinema){
 
-
-
-
-
-
-	}
 }

@@ -29,6 +29,9 @@
             <li class="nav-item"></li>
               <a class="nav-link" href="';echo FRONT_ROOT. 'Cinema/ShowListView" tabindex="-1" aria-disabled="true"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbspListado de Cines</a>
             </li>
+            <li class="nav-item"></li>
+            <a class="nav-link" href="';echo FRONT_ROOT. 'Room/ShowListView" tabindex="-1" aria-disabled="true"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbspListado de Salas</a>
+          </li>
           </ul>';
 
         } else {

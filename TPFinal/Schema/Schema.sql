@@ -146,6 +146,8 @@ create table Movies (
 create table Rooms (
     IdRoom int AUTO_INCREMENT,
     RoomNumber int not null,
+    Seats int not null,
+    Price int not null,
     CinemaId int NOT NULL,
     constraint PK_Rooms primary key (IdRoom),
     constraint Fk_Cinema foreign key (CinemaId)

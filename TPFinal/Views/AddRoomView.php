@@ -3,7 +3,14 @@
 require_once("navbar.php");
 use Controllers\CinemaController as cinemaController;
 ?> 
+<style>
+#box {
+    margin-top: 2%;
+    min-height: 85vh !important;
+    border-radius: 25px;
+}
 
+</style>
 <body>
 <div class="container">
         <!-- Inicio Index -->
@@ -31,17 +38,17 @@ use Controllers\CinemaController as cinemaController;
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNumber"><i style="color: red;">&#42&nbsp</i>Numero de sala</label>
-                            <input type="number" class="form-control" id="inputNumber" placeholder="Numero" name="numeroSala">
+                            <input type="number" class="form-control" id="inputNumber" name="RoomNumber" placeholder="Sala">
                         </div>
                     </div>
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputAsientos"><i style="color: red;">&#42&nbsp</i>Asientos en total</label>
-                            <input type="number" class="form-control" id="inputAsientos" name="asientos" placeholder="Asientos">
+                            <input type="number" class="form-control" id="inputAsientos" name="Seats" placeholder="Asientos">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPrecio"><i style="color: red;">&#42&nbsp</i>Precio de Ticket</label>
-                            <input type="number" class="form-control" id="inputPrecio" name="number" placeholder="Precio">
+                            <input type="number" class="form-control" id="inputPrecio" name="Price" placeholder="Precio">
                         </div>                        
                     </div>                    
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspSiguiente</button>

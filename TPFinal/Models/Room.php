@@ -5,6 +5,8 @@ class Room
 {
     private $idRoom;
     private $roomNumber;
+    private $cantButacas;
+    private $precioSala;
     private $idCinema;
 
     public function getIdRoom()
@@ -30,6 +32,32 @@ class Room
     public function setRoomNumber($roomNumer)
     {
         $this->roomNumer = $roomNumer;
+
+        return $this;
+    }
+    
+    public function getCantButacas()
+    {
+        return $this->cantButacas;
+    }
+
+
+    public function setCantButacas($cantButacas)
+    {
+        $this->cantButacas = $cantButacas;
+
+        return $this;
+    }
+    
+    public function getPrecioSala()
+    {
+        return $this->precioSala;
+    }
+
+
+    public function setPrecioSalaRoom($precioSala)
+    {
+        $this->precioSala = $precioSala;
 
         return $this;
     }

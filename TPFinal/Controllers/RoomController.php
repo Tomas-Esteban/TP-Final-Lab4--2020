@@ -19,7 +19,7 @@
             $this->cinemaDAO = new CinemaDAO();
             
         }
-        public function Add( $roomNumber)
+        public function Add($roomNumber,$cantButacas,$precioSala)
         {
            
             if(Validate::Logged() && Validate::AdminLog())
@@ -28,6 +28,9 @@
 
             $room = new Room();
             $room->setRoomNumber($roomNumber);
+            $room->setCantButacas($cantButacas);
+            $room->setPrecioSalaRoom($precioSala);
+
             if($_SESSION["LastIdCinema"]){
                 $room->setIdCinema($_SESSION["LastIdCinema"]);
                 $this->roomDAO->Add($room); 
@@ -43,7 +46,7 @@
             }
             
         }
-        public function AddMoreRoom($id, $roomNumber)
+        public function AddMoreRoom($id, $roomNumber,$cantButacas,$precioSala)
         {
            
             if(Validate::Logged() && Validate::AdminLog())
@@ -52,6 +55,8 @@
 
             $room = new Room();
             $room->setRoomNumber($roomNumber);
+            $room->setCantButacas($cantButacas);
+            $room->setPrecioSalaRoom($precioSala);
             $room->setIdCinema($id);
             $this->roomDAO->Add($room); 
             HomeController:: Index();
@@ -60,8 +65,6 @@
             {
                 HomeController:: Index();
             }
-            
-         
         }
         public function ShowAddView()
         {  
@@ -70,6 +73,32 @@
             if(Validate::Logged() && Validate::AdminLog())
             {
                 require_once(VIEWS_PATH . "AddRoomView.php");
+            }
+            else
+            {
+                HomeController:: Index();
+            }
+        }
+
+        public function ShowListView()
+        {
+            if (Validate::Logged() && Validate::AdminLog()) {
+                $roomList =  $this->GetAll();
+                require_once(VIEWS_PATH . "RoomList.php");
+
+            } else {
+            
+                HomeController::Index();
+            }
+        }
+
+        public function ShowEditView()
+        {  
+            $cine = new cinemaController();
+            $cinemaList = $cine->GetAll();
+            if(Validate::Logged() && Validate::AdminLog())
+            {
+                require_once(VIEWS_PATH . "EditRoomView.php");
             }
             else
             {
@@ -91,5 +120,11 @@
                 HomeController:: Index();
             }
         }
+        public function GetAll()
+    {
+
+        $roomList = $this->roomDAO->getAll();
+        return $roomList;
+    }
       
     }
