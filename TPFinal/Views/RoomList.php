@@ -161,7 +161,10 @@ textbox {
     <div class="row"> 
         <div class="col-md-4 ml-auto">    
                 <?php foreach($roomList as $room) { ?> 
-                <p> <?php echo $room->getAll();?></p>
+                <p> Numero:   <?php echo $room->getRoomNumber(); ?> </p> 
+                <p> Cine ID:  <?php echo $room->getIdCinema(); ?> </p> 
+                <p> Asientos: <?php echo $room->getCantButacas(); ?> </p> 
+                <p> Precio:   <?php echo $room->getPrecioSala(); ?> </p> 
                 <p><a id="editRoom" href = "<?php echo FRONT_ROOT ?> Room/ShowEditView"></a><button class="button" type="submit">Editar</a></button></p>
                 <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Room/Remove"></a><button class="button" type="submit">Borrar</a></button></p>
                 <?php } ?>

@@ -27,7 +27,7 @@ require_once("navbar.php");
                             <input type="text" class="form-control" id="inputNombre" name= "address" placeholder="Dirección">
                         </div>
                     </div>                    
-                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspAgregar nuevo Cine</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspFinalizar Edicion</button>
                     <button type="button" class="btn btn-primary"><i class="fas fa-arrow-left"></i>&nbspVolver</button>
                 </form>
                 <!-- form -->

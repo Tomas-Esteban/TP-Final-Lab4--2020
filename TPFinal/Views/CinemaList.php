@@ -161,9 +161,11 @@ textbox {
     <div class="row"> 
         <div class="col-md-4 ml-auto">    
                 <?php foreach($cinemaList as $cine) { ?> 
-                <p> <?php echo $cine->getCinemaName(); ?> </p> 
-                <p><a id="editCinema" href = "<?php echo FRONT_ROOT ?> Cinema/ShowEditView"></a><button class="button" type="submit">Editar</a></button></p>
-                <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Cinema/Remove"></a><button class="button" type="submit">Borrar</a></button></p>
+                <p> Nombre:    <?php echo $cine->getCinemaName(); ?> </p> 
+                <p> ID:        <?php echo $cine->getIdCinema(); ?> </p> 
+                <p> Direccion: <?php echo $cine->getAddress(); ?> </p> 
+                <p><a id="editCinema" href="<?php echo FRONT_ROOT ?> Cinema/ShowEditView">Editar</a></p>
+                <p><a id="deleteCinema" href="<?php echo FRONT_ROOT ?> Cinema/Remove">Borrar</a></p>
                 <?php } ?>
         </div>    
     </div>
