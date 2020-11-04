@@ -10,9 +10,11 @@
         {
             try 
             {
-                $query = "INSERT INTO " . $this->tableName . " (CinemaId, RoomNumber) VALUES (:CinemaId, :RoomNumber);";
-                $parameters["CinemaId"] = $room->getIdCinema();
+                $query = "INSERT INTO " . $this->tableName . " (CinemaId, RoomNumber, Seats, Price) VALUES (:CinemaId, :RoomNumber, :Seats, :Price);";
+                $parameters["CinemaId"]   = $room->getIdCinema();
                 $parameters["RoomNumber"] = $room->getRoomNumber();
+                $parameters["Seats"]      = $room->getCantButacas();
+                $parameters["Price"]      = $room->getPrecioSala();
         
                 $this->connection = Connection::GetInstance();
                 $this->connection->ExecuteNonQuery($query, $parameters);
@@ -53,7 +55,8 @@
                     $room->setIdRoom($row["IdRoom"]);
                     $room->setIdCinema($row["CinemaId"]);
                     $room->setRoomNumber($row["RoomNumber"]);
-
+                    $room->setCantButacas($row["Seats"]);
+                    $room->setPrecioSala($row["Price"]);
                  
 
                     array_push($roomList, $room);

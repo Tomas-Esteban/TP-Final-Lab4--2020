@@ -157,20 +157,51 @@ textbox {
 					<input id ="inputSearch" type="search" name="cinemaName">
 						<i class="fa fa-search" id="inputConfig"></i>
 				</form>				 
-        </div>
-    <div class="row"> 
-        <div class="col-md-4 ml-auto">    
-                <?php foreach($roomList as $room) { ?> 
-                <p> Numero:   <?php echo $room->getRoomNumber(); ?> </p> 
-                <p> Cine ID:  <?php echo $room->getIdCinema(); ?> </p> 
-                <p> Asientos: <?php echo $room->getCantButacas(); ?> </p> 
-                <p> Precio:   <?php echo $room->getPrecioSala(); ?> </p> 
-                <p><a id="editRoom" href = "<?php echo FRONT_ROOT ?> Room/ShowEditView"></a><button class="button" type="submit">Editar</a></button></p>
-                <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Room/Remove"></a><button class="button" type="submit">Borrar</a></button></p>
-                <?php } ?>
-        </div>    
     </div>
   </div>
+  <div class="row"> 
+    <div class="col">    
+      <div class ="row row-cols-4">
+        <div class = "col"> 
+          <p>Cine ID:</p> 
+        </div>
+        <div class ="col">
+          <p> Numero de sala:</p>
+        </div>
+        <div class = "col">
+          <p> Cantidad de asientos:</p> 
+        </div>
+        <div class = "col">
+          <p> Precio:</p> 
+        </div>
+        <div class = "col">
+          <p> Acciones:</p> 
+        </div>
+      </div>
+
+      <?php foreach($roomList as $room) { ?> 
+      <div class="row"> 
+        <div class="col-sm">    
+          <p><?php echo $room->getIdCinema(); ?> </p>
+        </div>
+        <div class= "col-sm">
+          <p><?php echo $room->getRoomNumber(); ?> </p> 
+        </div>
+        <div class= "col-sm">
+          <p><?php echo $room->getCantButacas(); ?> </p>
+        </div>
+        <div class= "col-sm">
+          <p><?php echo $room->getPrecioSala(); ?> </p> 
+        </div>
+        <div class= "col-sm">
+          <p><a id="editRoom" href = "<?php echo FRONT_ROOT ?> Room/ShowEditView"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
+          <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Room/Remove"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
+        </div>
+      </div>
+      <?php } ?>
+    </div>    
+  </div>
 </div>
+
 
 </html>

@@ -55,7 +55,7 @@ class Room
     }
 
 
-    public function setPrecioSalaRoom($precioSala)
+    public function setPrecioSala($precioSala)
     {
         $this->precioSala = $precioSala;
 

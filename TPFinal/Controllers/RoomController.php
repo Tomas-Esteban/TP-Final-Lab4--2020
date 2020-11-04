@@ -56,7 +56,7 @@
             $room = new Room();
             $room->setRoomNumber($roomNumber);
             $room->setCantButacas($cantButacas);
-            $room->setPrecioSalaRoom($precioSala);
+            $room->setPrecioSala($precioSala);
             $room->setIdCinema($id);
             $this->roomDAO->Add($room); 
             HomeController:: Index();

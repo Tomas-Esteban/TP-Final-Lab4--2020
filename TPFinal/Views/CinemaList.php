@@ -157,18 +157,42 @@ textbox {
 					<input id ="inputSearch" type="search" name="cinemaName">
 						<i class="fa fa-search" id="inputConfig"></i>
 				</form>				 
-        </div>
-    <div class="row"> 
-        <div class="col-md-4 ml-auto">    
-                <?php foreach($cinemaList as $cine) { ?> 
-                <p> Nombre:    <?php echo $cine->getCinemaName(); ?> </p> 
-                <p> ID:        <?php echo $cine->getIdCinema(); ?> </p> 
-                <p> Direccion: <?php echo $cine->getAddress(); ?> </p> 
-                <p><a id="editCinema" href="<?php echo FRONT_ROOT ?> Cinema/ShowEditView">Editar</a></p>
-                <p><a id="deleteCinema" href="<?php echo FRONT_ROOT ?> Cinema/Remove">Borrar</a></p>
-                <?php } ?>
-        </div>    
     </div>
+  </div>    
+  <div class="row"> 
+    <div class="col">    
+      <div class ="row row-cols-4">
+        <div class = "col"> 
+          <p> ID:</p> 
+        </div>
+        <div class ="col">
+          <p> Nombre:</p>
+        </div>
+        <div class = "col">
+          <p> Direccion:</p> 
+        </div>
+        <div class = "col">
+          <p> Acciones:</p> 
+        </div>
+      </div>
+      <?php foreach($cinemaList as $cine) { ?> 
+      <div class ="row">
+        <div class = "col-sm"> 
+          <p>            <?php echo $cine->getIdCinema(); ?> </p> 
+        </div>
+        <div class ="col-sm">
+          <p>            <?php echo $cine->getCinemaName(); ?> </p>
+        </div>
+        <div class = "col-sm">
+          <p>            <?php echo $cine->getAddress(); ?> </p> 
+        </div>
+        <div class = "col-sm">
+          <p><a id="editCinema" href="<?php echo FRONT_ROOT ?> Cinema/ShowEditView"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
+          <p><a id="deleteCinema" href="<?php echo FRONT_ROOT ?> Cinema/Remove"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
+        </div>
+      </div>
+      <?php } ?>
+    </div>    
   </div>
 </div>
 
