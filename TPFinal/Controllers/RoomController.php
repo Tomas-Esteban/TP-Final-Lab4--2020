@@ -92,10 +92,10 @@
             }
         }
 
-        public function ShowEditView()
+        public function ShowEditView($idSala)
         {  
-            $cine = new cinemaController();
-            $cinemaList = $cine->GetAll();
+            $room = new RoomController();
+            $roomList = $room->GetAll();
             if(Validate::Logged() && Validate::AdminLog())
             {
                 require_once(VIEWS_PATH . "EditRoomView.php");
@@ -105,6 +105,30 @@
                 HomeController:: Index();
             }
         }
+        public function Update($idSala, $numeroSala, $asientos, $precio)
+    {
+        if (Validate::Logged() && Validate::AdminLog()) {
+            $idSala     = Validate::ValidateData($idSala);
+            $numeroSala = Validate::ValidateData($numeroSala);
+            $asientos   = Validate::ValidateData($asientos);
+            $precio     = Validate::ValidateData($precio);
+
+            $room = new Room();
+            $room->setIdRoom($idSala);
+            $room->setRoomNumber($numeroSala);
+            $room->setCantButacas($asientos);
+            $room->setPrecioSala($precio);
+            
+            if ($this->roomDAO->UpdateRoom($room)) {
+                $this->ShowListView();
+            } else {
+
+                $this->ShowEditView($idSala, "Error al cargar Sala, verificar Cine");
+            }
+        } else {
+            HomeController::Index();
+        }
+    }
         public function Remove($idRoom)
         {    
             if(Validate::Logged() && Validate::AdminLog())

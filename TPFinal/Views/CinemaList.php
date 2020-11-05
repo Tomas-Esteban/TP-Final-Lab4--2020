@@ -187,8 +187,8 @@ textbox {
           <p>            <?php echo $cine->getAddress(); ?> </p> 
         </div>
         <div class = "col-sm">
-          <p><a id="editCinema" href="<?php echo FRONT_ROOT ?> Cinema/ShowEditView"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
-          <p><a id="deleteCinema" href="<?php echo FRONT_ROOT ?> Cinema/Remove"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
+          <p><a id="editCinema" href="<?php echo FRONT_ROOT ?> Cinema/ShowEditView/<?= $cine->getIdCinema();?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
+          <p><a id="deleteCinema" href="<?php echo FRONT_ROOT ?> Cinema/Remove/<?= $cine->getIdCinema();?>"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
         </div>
       </div>
       <?php } ?>

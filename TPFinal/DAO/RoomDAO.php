@@ -114,6 +114,23 @@
                 return null;
             }
         }*/
+        public function UpdateRoom($room)
+	{
+		try {
+			$query = "UPDATE " . $this->tableName . " SET IdRoom = :IdRoom, RoomNumber = :RoomNumber, Seats = :Seats, Price = :Price WHERE IdRoom =" . $room->getIdRoom() . ";";
+
+			$parameters["IdRoom"]       = $room->getIdRoom();
+			$parameters["RoomNumber"]   = $room->getRoomNumber();
+            $parameters["Seats"]        = $room->getCantButacas();
+            $parameters["Price"]        = $room->getPrecioSala();
+
+			$connection = Connection::GetInstance();
+			$result = $connection->ExecuteNonQuery($query, $parameters);
+			return true;
+		} catch (Exception $ex) {
+			return null;
+		}
+	}
       
     }
 ?>

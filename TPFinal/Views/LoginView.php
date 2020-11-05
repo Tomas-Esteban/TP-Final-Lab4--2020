@@ -2,43 +2,6 @@
 
 require_once("navbar.php");
 ?> 
-<main>
-     <section>
-          <div class="container">
-               <div class="row justify-content-center">
-                    <div id="formBox" class="col-md-5">
-                         <h1 id="mainTitle"><i class="fas fa-ticket-alt"></i>&nbspMoviePass</h1>
-                         <hr>
-                         <br>
-                         <form action="<?php echo FRONT_ROOT ?>Login/Index" method="POST">
-                              <div class="login-box">
-                                   <div class="textbox">
-                                        <i class="fas fa-user"></i>
-                                        <input type="text" required placeholder="E-mail" name="email" value="">
-                                   </div>
-
-                                   <div class="textbox">
-                                        <i class="fas fa-lock"></i>
-                                        <input type="password" required placeholder="Contraseña" name="pass" value="">
-                                   </div>
-                                   <?php require_once("alertMessage.php")?>
-                                   <button id="loginBtn" type="submit" name="button">Entrar</button>                                   
-                              </div>
-                         </form>
-                         <hr />
-                         <form action="<?php echo FRONT_ROOT ?>Login/LogInWithFacebookHandler" method="post">
-                              <button id="facebook" type="submit" name="button" class="btn btn-bg btn-primary"><i class="fab fa-facebook-square"></i>&nbspIniciar Sesion con Facebook</button>
-                         </form>
-                         <a id="forgotPassword" href="<?php echo FRONT_ROOT ?>Login/ShowForgotPasswordView"> Olvidaste tu contraseña?</a>
-                         <p>No tenes una cuenta?<a id="registerLink" href="<?php echo FRONT_ROOT ?>Register/View"> Registrarme en MoviePass</a></p>
-                         <small id="condiciones">Si haces click en "Registrarme con Facebook" y no sos usuario de MoviePass, automaticamente<br>vas a
-                              estar aceptando los terminos y condiciones de la politica de privacidad de MoviePass
-                         </small>
-                    </div>
-               </div>
-          </div>
-     </section>
-</main>
 
 <style>
      hr {
@@ -156,3 +119,40 @@ require_once("navbar.php");
           font-weight: 400;
      }
 </style>
+<main>
+     <section>
+          <div class="container">
+               <div class="row justify-content-center">
+                    <div id="formBox" class="col-md-5">
+                         <h1 id="mainTitle"><i class="fas fa-ticket-alt"></i>&nbspMoviePass</h1>
+                         <hr>
+                         <br>
+                         <form action="<?php echo FRONT_ROOT ?>Login/Index" method="POST">
+                              <div class="login-box">
+                                   <div class="textbox">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" required placeholder="E-mail" name="email" value="">
+                                   </div>
+
+                                   <div class="textbox">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" required placeholder="Contraseña" name="pass" value="">
+                                   </div>
+                                   <?php require_once("alertMessage.php")?>
+                                   <button id="loginBtn" type="submit" name="button">Entrar</button>                                   
+                              </div>
+                         </form>
+                         <hr />
+                         <form action="<?php echo FRONT_ROOT ?>Login/LogInWithFacebookHandler" method="post">
+                              <button id="facebook" type="submit" name="button" class="btn btn-bg btn-primary"><i class="fab fa-facebook-square"></i>&nbspIniciar Sesion con Facebook</button>
+                         </form>
+                         <a id="forgotPassword" href="<?php echo FRONT_ROOT ?>Login/ShowForgotPasswordView"> Olvidaste tu contraseña?</a>
+                         <p>No tenes una cuenta?<a id="registerLink" href="<?php echo FRONT_ROOT ?>Register/View"> Registrarme en MoviePass</a></p>
+                         <small id="condiciones">Si haces click en "Registrarme con Facebook" y no sos usuario de MoviePass, automaticamente<br>vas a
+                              estar aceptando los terminos y condiciones de la politica de privacidad de MoviePass
+                         </small>
+                    </div>
+               </div>
+          </div>
+     </section>
+</main>

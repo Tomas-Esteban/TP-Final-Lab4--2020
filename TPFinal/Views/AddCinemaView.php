@@ -4,6 +4,14 @@
 require_once("navbar.php");
 ?> 
 
+<style>
+#box {
+    margin-top: 2%;
+    min-height: 85vh !important;
+    border-radius: 25px;
+}
+
+</style>
 <body>
 <div class="container">
         <!-- Inicio Index -->
@@ -51,12 +59,3 @@ require_once("navbar.php");
 </body>
 
 
-
-<style>
-#box {
-    margin-top: 2%;
-    min-height: 85vh !important;
-    border-radius: 25px;
-}
-
-</style>

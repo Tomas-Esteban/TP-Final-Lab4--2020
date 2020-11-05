@@ -3,6 +3,14 @@
 
 require_once("navbar.php");
 ?> 
+<style>
+#box {
+    margin-top: 2%;
+    min-height: 85vh !important;
+    border-radius: 25px;
+}
+
+</style>
 
 <body>
 <div class="container">
@@ -13,8 +21,10 @@ require_once("navbar.php");
             </div>
             <!-- form     -->
             <div class="col-md-10">
-
                 <form action = "<?php echo FRONT_ROOT ?>Cinema/Update" method= "post">
+                    <input type = "hidden" value= <?php echo $idCinema ?> name = "idCinema"> 
+                    
+
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">
                             <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Nombre</label>
@@ -52,11 +62,3 @@ require_once("navbar.php");
 
 
 
-<style>
-#box {
-    margin-top: 2%;
-    min-height: 85vh !important;
-    border-radius: 25px;
-}
-
-</style>

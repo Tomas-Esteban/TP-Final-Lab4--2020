@@ -1,47 +1,5 @@
 <?php require_once("navbar.php"); ?>
 
-<div id="box" class="container" style="background-color: rgba(255, 255, 255, 0.5);"> 		
-  <div class="row" >   
-		<div class="col-md-4">
-				<form id ="searchBox" action="<?php echo FRONT_ROOT ?> Movies/SearchByName" method = "POST">
-					<input id ="inputSearch" type="search" name="movieName">
-						<i class="fa fa-search" id="inputConfig"></i>
-				</form>				 
-		</div>
-		<div class="col-md-8">
-			<select  class="custom-select">
-							 <option value="0">Selecciona el Género</option>
-							 <option value="1"></option>
-						 </select>
-					  <div class="textbox">
-						  <form  action="<?php echo FRONT_ROOT ?> Movies/SearchByDate" method = "POST">
-							<input id="inputDate" type="date" name="date">
-							<button type="submit" class="btn btn-primary">Buscar</button>
-						  </form>			
-					 </div>
-			</div>
-      </div>
-       <div class="row"> 
-      <?php foreach($movieList as $movies) { ?>   
-        <div class="col-md-3">
-          <div class="flip-card movieBoxes">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                  <img src= "<?php echo $movies->getPhoto()?>" alt="Avatar" style="width:100%;height:100%;">
-              </div>
-              <div class="flip-card-back">
-                <h1> <?php echo $movies->getMovieName(); ?> </h1> 
-                <p><?php echo $movies->getReleaseDate(); ?></p> 
-                <p><a id="buyTicket" href = "#"></a><button class="button">Comprar</a><i class="fas fa-ticket-alt"></i></button></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
-    </div>
-  </div>
-</div>
-
 <style>
 body {
     height: 100%;
@@ -256,4 +214,46 @@ textbox {
   float: right;
 }
 </style>
+<div id="box" class="container" style="background-color: rgba(255, 255, 255, 0.5);"> 		
+  <div class="row" >   
+		<div class="col-md-4">
+				<form id ="searchBox" action="<?php echo FRONT_ROOT ?> Movies/SearchByName" method = "POST">
+					<input id ="inputSearch" type="search" name="movieName">
+						<i class="fa fa-search" id="inputConfig"></i>
+				</form>				 
+		</div>
+		<div class="col-md-8">
+			<select  class="custom-select">
+							 <option value="0">Selecciona el Género</option>
+							 <option value="1"></option>
+						 </select>
+					  <div class="textbox">
+						  <form  action="<?php echo FRONT_ROOT ?> Movies/SearchByDate" method = "POST">
+							<input id="inputDate" type="date" name="date">
+							<button type="submit" class="btn btn-primary">Buscar</button>
+						  </form>			
+					 </div>
+			</div>
+      </div>
+       <div class="row"> 
+      <?php foreach($movieList as $movies) { ?>   
+        <div class="col-md-3">
+          <div class="flip-card movieBoxes">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                  <img src= "<?php echo $movies->getPhoto()?>" alt="Avatar" style="width:100%;height:100%;">
+              </div>
+              <div class="flip-card-back">
+                <h1> <?php echo $movies->getMovieName(); ?> </h1> 
+                <p><?php echo $movies->getReleaseDate(); ?></p> 
+                <p><a id="buyTicket" href = "#"></a><button class="button">Comprar</a><i class="fas fa-ticket-alt"></i></button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+</div>
+
 </html>

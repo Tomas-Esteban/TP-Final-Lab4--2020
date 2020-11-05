@@ -1,4 +1,12 @@
+<style>
 
+#alert {
+          display: block;
+          width: 80%;
+          margin-top: 2%;
+     }
+
+</style>
 <?php 
 if(isset($alertType)){
     if($alertType == "danger"){
@@ -48,12 +56,3 @@ if(isset($alertType)){
 </script>
 
 
-<style>
-
-#alert {
-          display: block;
-          width: 80%;
-          margin-top: 2%;
-     }
-
-</style>

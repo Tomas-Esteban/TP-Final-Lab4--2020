@@ -1,77 +1,4 @@
 <?php require_once("navbar.php"); ?>
-
-<div id="box" class="container" style="background-color: rgba(255, 255, 255, 0.5);">
-  <div class="row">
-    <div class="col-md-4">
-      <form id="searchBox" action="<?php echo FRONT_ROOT ?>Movies/GetMovieFromApiByName" method="POST">
-        <input id="inputSearch" type="search" name="movieName">
-        <i class="fa fa-search" id="inputConfig"></i>
-      </form>
-    </div>
-    <div class="col-md-8 align-items-center m-auto">
-
-      <div class="row justify-content-center align-items-center">
-
-        <div class="col-md-6 text-center m-auto" >
-          <div class="textbox">
-            <select class="custom-select" >
-
-              <option value="0">Selecciona el Género</option>
-              <?php foreach($moviegender as $moviegenders) { ?>
-              <option value="1"><?php echo $moviegenders->getGenresFromApi(); ?></option>
-            <?php } ?>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 text-center m-auto">
-          <div class="textbox">
-            <form action="">
-              <input id="inputDate" type="date" name="date">
-              <button type="submit" class="btn btn-primary">Buscar</button>
-            </form>
-          </div>
-        </div>
-
-
-      </div>
-
-    </div>
-    
-  </div>
-  <div class="row">
-    <?php foreach($movieList as $movies) { ?>
-    <div class="col-md-3">
-      <div class="flip-card movieBoxes">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="<?php echo $movies->getPhoto()?>" alt="Avatar" style="width:100%;height:100%;">
-          </div>
-          <div class="flip-card-back">
-            <h1> <?php echo $movies->getMovieName(); ?> </h1>
-            <p><?php echo $movies->getReleaseDate(); ?></p>
-            <?php if($movies->getIsPlaying() == false) {?>
-            <p><a id="addMovie"
-                href="<?php echo FRONT_ROOT ?>Movies/AddMovieToDatabase?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
-                  id="add" class="button">Agregar</button></a></p>
-            <?php } else {?>
-            <p><a id="editMovie"
-                href="<?php echo FRONT_ROOT ?>Screening/View?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
-                  id="edit" class="button">Editar</button></a></p>
-            <p><a id="removeMovie"
-                href="<?php echo FRONT_ROOT ?>Movies/RemoveMovie?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
-                  id="remove" class="button">Eliminar</button></a></p>
-            <?php }?>
-          </div>
-        </div>
-      </div>
-    </div>
-    <?php } ?>
-  </div>
-</div>
-</div>
-
-
 <style>
   body {
     height: 100%;
@@ -261,5 +188,79 @@
     background-color: #FF4136;
   }
 </style>
+
+<div id="box" class="container" style="background-color: rgba(255, 255, 255, 0.5);">
+  <div class="row">
+    <div class="col-md-4">
+      <form id="searchBox" action="<?php echo FRONT_ROOT ?>Movies/GetMovieFromApiByName" method="POST">
+        <input id="inputSearch" type="search" name="movieName">
+        <i class="fa fa-search" id="inputConfig"></i>
+      </form>
+    </div>
+    <div class="col-md-8 align-items-center m-auto">
+
+      <div class="row justify-content-center align-items-center">
+
+        <div class="col-md-6 text-center m-auto" >
+          <div class="textbox">
+            <select class="custom-select" >
+
+              <option value="0">Selecciona el Género</option>
+              <?php foreach($moviegender as $moviegenders) { ?>
+              <option value="1"><?php echo $moviegenders->getGenresFromApi(); ?></option>
+            <?php } ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center m-auto">
+          <div class="textbox">
+            <form action="">
+              <input id="inputDate" type="date" name="date">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    
+  </div>
+  <div class="row">
+    <?php foreach($movieList as $movies) { ?>
+    <div class="col-md-3">
+      <div class="flip-card movieBoxes">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="<?php echo $movies->getPhoto()?>" alt="Avatar" style="width:100%;height:100%;">
+          </div>
+          <div class="flip-card-back">
+            <h1> <?php echo $movies->getMovieName(); ?> </h1>
+            <p><?php echo $movies->getReleaseDate(); ?></p>
+            <?php if($movies->getIsPlaying() == false) {?>
+            <p><a id="addMovie"
+                href="<?php echo FRONT_ROOT ?>Movies/AddMovieToDatabase?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
+                  id="add" class="button">Agregar</button></a></p>
+            <?php } else {?>
+            <p><a id="editMovie"
+                href="<?php echo FRONT_ROOT ?>Screening/View?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
+                  id="edit" class="button">Editar</button></a></p>
+            <p><a id="removeMovie"
+                href="<?php echo FRONT_ROOT ?>Movies/RemoveMovie?IdMovieIMDB=<?php echo $movies->getIdMovieIMDB(); ?>"><button
+                  id="remove" class="button">Eliminar</button></a></p>
+            <?php }?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+  </div>
+</div>
+</div>
+
+
+
 
 </html>

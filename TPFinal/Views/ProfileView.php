@@ -1,5 +1,29 @@
 <?php require_once("navbar.php");?>
+<style>
+    #box {
+        margin-top: 2%;
+        min-height: 85vh !important;
+        border-radius: 25px;
+    }
 
+    #imgProfile {
+        border-radius: 50%;
+        border: 4px solid black;
+        background-color: rgba(52, 57, 64, 0.5);
+    }
+
+    .imgOption {
+        border-radius: 50%;
+        border: 4px solid black;
+        background-color: rgba(52, 57, 64, 0.5);
+    }
+
+    .imgButton{
+        background-color: transparent;
+        border: none;
+        margin-bottom: 5%;
+    }
+</style>
 <body>
     <div class="container">
         <!-- Inicio Index -->
@@ -136,28 +160,3 @@
 
 </html>
 
-<style>
-    #box {
-        margin-top: 2%;
-        min-height: 85vh !important;
-        border-radius: 25px;
-    }
-
-    #imgProfile {
-        border-radius: 50%;
-        border: 4px solid black;
-        background-color: rgba(52, 57, 64, 0.5);
-    }
-
-    .imgOption {
-        border-radius: 50%;
-        border: 4px solid black;
-        background-color: rgba(52, 57, 64, 0.5);
-    }
-
-    .imgButton{
-        background-color: transparent;
-        border: none;
-        margin-bottom: 5%;
-    }
-</style>

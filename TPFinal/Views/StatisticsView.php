@@ -1,5 +1,21 @@
 <?php require_once("navbar.php"); ?>
+<style>
+    .container {
+        padding: 3%;
+        height: 85%;
+        background-color: white;
+        opacity: .9;
+        background-size: cover;
+        margin-top: 1%;
+        width: 70%;
+        border-radius: 1%;
+    }
 
+    .overflow-auto {
+        height: 95%;
+        padding: 1%;
+    }
+</style>
 <body>
     <div class="container">
         <div class="overflow-auto">
@@ -48,20 +64,3 @@
         </div>
     </div>
 </body>
-<style>
-    .container {
-        padding: 3%;
-        height: 85%;
-        background-color: white;
-        opacity: .9;
-        background-size: cover;
-        margin-top: 1%;
-        width: 70%;
-        border-radius: 1%;
-    }
-
-    .overflow-auto {
-        height: 95%;
-        padding: 1%;
-    }
-</style>

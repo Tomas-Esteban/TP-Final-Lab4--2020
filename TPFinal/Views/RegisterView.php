@@ -1,3 +1,151 @@
+
+<style>
+
+input:focus, textarea:focus {
+background   : rgba(0,0,0,.0);
+border-radius: 5px;
+outline      : none;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: white;
+    border-radius: 25px;
+    width: 75%;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.container {
+      color: white;
+      font-family: 'Muli', sans-serif;
+ }
+
+ .login-box {
+      margin-left: 14%;
+ }
+
+.textbox {
+      width: 70%;
+      overflow: hidden;
+      font-size: 15px;
+      padding: 8px 0;
+      margin: 8px 0;
+      border-bottom: 1px solid white;
+ }
+
+ .textbox i {
+      margin-top: 3%;
+      width: 20px;
+      float: left;
+      text-align: center;
+ }
+
+ .textbox input {
+      border: none;
+      outline: none;
+      background: none;
+      color: white;
+      font-size: 18px;
+      width: 80%;
+      float: left;
+      margin: 0 10px 0 0.4rem;
+ }
+
+ .textbox input:focus {
+    background: none;
+    color: white;
+ }
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 150%;
+    font-weight: 600;
+    color: white;
+}
+
+.RegisterBox {
+    margin-left: 14%;
+}
+
+ #formBox {
+      width: 80%;
+      margin-top: 10%;
+      color: white;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 2%;
+ }
+
+ #mainTitle {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 5%;
+      text-align: center;
+      font-size: 240%;
+      font-weight: 600;
+ }
+
+ #formBox h3 {
+      text-align: left;
+      font-size: 25px;
+      margin-bottom: -1px;
+ }
+
+ #logInLink {
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ #registerBtn {
+      display: block;
+      width: 80%;
+      height: 50px;
+      border-radius: 25px;
+      margin: 1rem 0 0 0.4rem;
+      font-size: 1.2rem;
+      outline: none;
+      border: none;
+      color: white;
+      background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+ }
+
+ #registerBtn:hover {
+      background-image: linear-gradient(to right, #27a37a, #32be8f, #27a37a);
+      cursor: pointer;
+ }
+
+ #facebook {
+      display: block;
+      width: 80%;
+      height: 50px;
+      border-radius: 25px;
+      margin: 1rem 0 1rem 3rem;
+      font-size: 1.2rem;
+      outline: none;
+      border: none;
+ }
+
+ #condiciones {
+      font-size: 62%;
+      font-weight: 400;
+ }
+
+ #alertLogin {
+      display: block;
+      width: 80%;
+      margin-top: 2%;
+ }
+
+</style>
+
 <main>
     <section>
         <div class="container">
@@ -64,150 +212,3 @@
     </section>
 </main>
 
-
-<style>
-
-    input:focus, textarea:focus {
-    background   : rgba(0,0,0,.0);
-    border-radius: 5px;
-    outline      : none;
-    }
-
-    hr {
-        border: none;
-        height: 2px;
-        background: white;
-        border-radius: 25px;
-        width: 75%;
-    }
-
-    h4 {
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
-
-    .container {
-          color: white;
-          font-family: 'Muli', sans-serif;
-     }
-
-     .login-box {
-          margin-left: 14%;
-     }
-
-    .textbox {
-          width: 70%;
-          overflow: hidden;
-          font-size: 15px;
-          padding: 8px 0;
-          margin: 8px 0;
-          border-bottom: 1px solid white;
-     }
-
-     .textbox i {
-          margin-top: 3%;
-          width: 20px;
-          float: left;
-          text-align: center;
-     }
-
-     .textbox input {
-          border: none;
-          outline: none;
-          background: none;
-          color: white;
-          font-size: 18px;
-          width: 80%;
-          float: left;
-          margin: 0 10px 0 0.4rem;
-     }
-
-     .textbox input:focus {
-        background: none;
-        color: white;
-     }
-
-    .subtitle {
-        font-family: 'Montserrat', sans-serif;
-        margin-top: 5%;
-        text-align: center;
-        font-size: 150%;
-        font-weight: 600;
-        color: white;
-    }
-
-    .RegisterBox {
-        margin-left: 14%;
-    }
-
-     #formBox {
-          width: 80%;
-          margin-top: 10%;
-          color: white;
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 2%;
-     }
-
-     #mainTitle {
-          font-family: 'Montserrat', sans-serif;
-          margin-top: 5%;
-          text-align: center;
-          font-size: 240%;
-          font-weight: 600;
-     }
-
-     #formBox h3 {
-          text-align: left;
-          font-size: 25px;
-          margin-bottom: -1px;
-     }
-
-     #logInLink {
-        background: none;
-        border: none;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-     #registerBtn {
-          display: block;
-          width: 80%;
-          height: 50px;
-          border-radius: 25px;
-          margin: 1rem 0 0 0.4rem;
-          font-size: 1.2rem;
-          outline: none;
-          border: none;
-          color: white;
-          background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
-     }
-
-     #registerBtn:hover {
-          background-image: linear-gradient(to right, #27a37a, #32be8f, #27a37a);
-          cursor: pointer;
-     }
-
-     #facebook {
-          display: block;
-          width: 80%;
-          height: 50px;
-          border-radius: 25px;
-          margin: 1rem 0 1rem 3rem;
-          font-size: 1.2rem;
-          outline: none;
-          border: none;
-     }
-
-     #condiciones {
-          font-size: 62%;
-          font-weight: 400;
-     }
-
-     #alertLogin {
-          display: block;
-          width: 80%;
-          margin-top: 2%;
-     }
-
-</style>

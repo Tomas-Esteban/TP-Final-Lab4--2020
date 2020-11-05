@@ -10,9 +10,9 @@ use Models\Movie as Movie;
 use Models\Cinema as Cinema;
 use Models\Room as Room;
 use Exception;
-use Util\ApiResponse;
 use Util\Validate;
 use Controllers\HomeController as HomeController;
+
 
 
 class CinemaController
@@ -59,9 +59,9 @@ class CinemaController
 
     public function ShowEditView($idCinema, $alertMessage = "")
     {
-
+      
         if (Validate::Logged() && Validate::AdminLog()) {
-
+            
             require_once(VIEWS_PATH . "EditCinemaView.php");
         } else {
             HomeController::Index();
@@ -107,14 +107,6 @@ class CinemaController
             $cinema->setIdCinema($idCinema);
             $this->cinemaDAO->remove($cinema);
 
-             if ($this->cineDAO->remove($cinema)){
-                Functions::flash("El cine se ha eliminado correctamente.","success");
-             } 
-            else {
-                Functions::flash("Hubo un error al eliminar el cine.");
-            }
-            Functions::redirect("Cine","ShowListView");
-
             $this->ShowListView();
         } else {
             HomeController::Index();
@@ -130,11 +122,9 @@ class CinemaController
 
             $cinema = new Cinema();
             $cinema->setIdCinema($idCinema);
-            $cinema = $this->cinemaDAO->getCinemaByName($cinema);
-            if ($cinema != null) {
-                $cinema->setCinemaName($cinemaName);
-                $cinema->setAddress($address);
-            }
+            $cinema->setCinemaName($cinemaName);
+            $cinema->setAddress($address);
+            
             if ($this->cinemaDAO->UpdateCinema($cinema)) {
                 $this->ShowListView();
             } else {

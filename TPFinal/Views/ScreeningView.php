@@ -1,5 +1,69 @@
 <?php require_once("navbar.php"); ?>
 
+<style>
+    h1 {
+        margin-top: 2%;
+    }
+
+    #formBox {
+        min-height: 55vh !important;
+        max-height: 55vh !important;
+    }
+
+    #box {
+        margin-top: 2%;
+        min-height: 80vh !important;
+        max-height: 80vh !important;
+        border-radius: 25px;
+    }
+
+    #poster {
+        border-style: solid;
+        border-color: linear-gradient(to right, #262b33, #707d91, #262b33);
+        border-width: 10px;
+        border-radius: 10px;
+    }
+
+    .titleData {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .textData {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    #titleLine {
+        position: relative;
+        display: inline-block;
+    }
+
+    #titleLine::before,
+    #titleLine::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -220px;
+        width: 200px;
+        border-bottom: 1px solid #FFF;
+    }
+
+    #titleLine::after {
+        left: auto;
+        right: -220px;
+    }
+
+    .ticketText {
+        font-weight: 600;
+    }
+
+    .ticketData {
+        font-weight: 300;
+    }
+
+</style>
 <div class="container">
     <!-- Inicio Index -->
     <div id="box" class="row justify-content-center" style="background-color: rgba(255, 255, 255, 0.5);">
@@ -189,68 +253,3 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
-
-<style>
-    h1 {
-        margin-top: 2%;
-    }
-
-    #formBox {
-        min-height: 55vh !important;
-        max-height: 55vh !important;
-    }
-
-    #box {
-        margin-top: 2%;
-        min-height: 80vh !important;
-        max-height: 80vh !important;
-        border-radius: 25px;
-    }
-
-    #poster {
-        border-style: solid;
-        border-color: linear-gradient(to right, #262b33, #707d91, #262b33);
-        border-width: 10px;
-        border-radius: 10px;
-    }
-
-    .titleData {
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-
-    .textData {
-        font-size: 1rem;
-        font-weight: 400;
-    }
-
-    #titleLine {
-        position: relative;
-        display: inline-block;
-    }
-
-    #titleLine::before,
-    #titleLine::after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: -220px;
-        width: 200px;
-        border-bottom: 1px solid #FFF;
-    }
-
-    #titleLine::after {
-        left: auto;
-        right: -220px;
-    }
-
-    .ticketText {
-        font-weight: 600;
-    }
-
-    .ticketData {
-        font-weight: 300;
-    }
-
-</style>

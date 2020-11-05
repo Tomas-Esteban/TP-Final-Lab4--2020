@@ -1,3 +1,11 @@
+
+<style>
+  #box {
+    margin-top: 2%;
+    min-height: 85vh !important;
+    border-radius: 25px;
+  }
+</style>
 <div class="container">
   <!-- Inicio Index -->
   <div id="box" class="row justify-content-center" style="background-color: rgba(255, 255, 255, 0.5);">
@@ -91,11 +99,3 @@
     });
   });
 </script>
-
-<style>
-  #box {
-    margin-top: 2%;
-    min-height: 85vh !important;
-    border-radius: 25px;
-  }
-</style>

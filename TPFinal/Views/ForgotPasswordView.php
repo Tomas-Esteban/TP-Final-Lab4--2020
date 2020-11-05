@@ -1,36 +1,3 @@
-<main>
-    <section>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div id="formBox" class="col-md-5">
-                    <h1 id="mainTitle"><i class="fas fa-ticket-alt"></i>&nbspMoviePass</h1>
-                    <hr>
-                    <br>
-                    <form action="<?php echo FRONT_ROOT ?>Login/RecoverPassword" method="post">
-                        <div class="forgotPassword-box">
-                            <div class="textbox">
-                                <i class="fas fa-user"></i>
-                                <input type="text" required placeholder="E-mail" name="email" value="">
-                            </div>
-                            <?php require_once("alertMessage.php")?>
-                            <button id="forgotPasswordBtn" type="submit" name="button">Recuperar contraseña</button><br>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div id="backBox" class="col-md-5">                
-                    <button  onclick="window.location.href='<?php echo FRONT_ROOT ?>Login/View';" id="backBtn" type="submit" name="button" class="btn"> 
-                        <i class="fas fa-arrow-left" style="font-size: 2rem;"></i>&nbsp&nbsp&nbsp&nbsp<span style="font-size: 1.8rem; font-weight: 600;">Volver Atrás</span>
-                    </button>
-                    <br>                    
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
 <style>
 
     hr {
@@ -139,3 +106,38 @@
     }
     
 </style>
+
+
+<main>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="formBox" class="col-md-5">
+                    <h1 id="mainTitle"><i class="fas fa-ticket-alt"></i>&nbspMoviePass</h1>
+                    <hr>
+                    <br>
+                    <form action="<?php echo FRONT_ROOT ?>Login/RecoverPassword" method="post">
+                        <div class="forgotPassword-box">
+                            <div class="textbox">
+                                <i class="fas fa-user"></i>
+                                <input type="text" required placeholder="E-mail" name="email" value="">
+                            </div>
+                            <?php require_once("alertMessage.php")?>
+                            <button id="forgotPasswordBtn" type="submit" name="button">Recuperar contraseña</button><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div id="backBox" class="col-md-5">                
+                    <button  onclick="window.location.href='<?php echo FRONT_ROOT ?>Login/View';" id="backBtn" type="submit" name="button" class="btn"> 
+                        <i class="fas fa-arrow-left" style="font-size: 2rem;"></i>&nbsp&nbsp&nbsp&nbsp<span style="font-size: 1.8rem; font-weight: 600;">Volver Atrás</span>
+                    </button>
+                    <br>                    
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

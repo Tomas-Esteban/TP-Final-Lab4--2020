@@ -194,8 +194,8 @@ textbox {
           <p><?php echo $room->getPrecioSala(); ?> </p> 
         </div>
         <div class= "col-sm">
-          <p><a id="editRoom" href = "<?php echo FRONT_ROOT ?> Room/ShowEditView"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
-          <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Room/Remove"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
+          <p><a id="editRoom" href = "<?php echo FRONT_ROOT ?> Room/ShowEditView/<?=$room->getIdRoom();?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></p>
+          <p><a id="deleteCinema" href = "<?php echo FRONT_ROOT ?> Room/Remove/<?= $room->getIdRoom();?>"><i class="fa fa-times-circle" aria-hidden="true"></i></a></p>
         </div>
       </div>
       <?php } ?>

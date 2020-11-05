@@ -1,5 +1,63 @@
 <?php require_once("navbar.php"); ?>
+<style>
 
+.carousel img {
+    max-height: 400px;
+    margin: 0 auto;
+    }
+
+ .container {
+    min-height: 100vh; 
+    height: 100% !important;
+}
+
+.carousel-caption {
+    background-color: rgba(47,47,47,0.8);
+    border-radius: 25px;
+}
+
+#box {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    min-height: 100vh !important;
+    border-radius: 10%;    
+}
+
+#carouselMovies {
+    margin-top: 6%;    
+    border-style: solid;
+    border-color: linear-gradient(to right,#262b33,#707d91,#262b33);
+    border-width: 20px;
+    border-radius: 10px;    
+}
+
+#colCards {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#movieCard {
+    background-color: #0169a4;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.95rem;
+}
+
+#shopCard {
+    background-color: #0169a4;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.95rem;
+}
+
+#ticketCard {
+    background-color: #0169a4;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.95rem;
+}
+
+</style>
 <div class="container">
     <!-- Inicio Index -->
     <div id="box" class="row justify-content-center" style="background-color: rgba(255, 255, 255, 0.5);">
@@ -100,62 +158,3 @@
 </div>
 
 
-<style>
-
-.carousel img {
-    max-height: 400px;
-    margin: 0 auto;
-    }
-
- .container {
-    min-height: 100vh; 
-    height: 100% !important;
-}
-
-.carousel-caption {
-    background-color: rgba(47,47,47,0.8);
-    border-radius: 25px;
-}
-
-#box {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    min-height: 100vh !important;
-    border-radius: 10%;    
-}
-
-#carouselMovies {
-    margin-top: 6%;    
-    border-style: solid;
-    border-color: linear-gradient(to right,#262b33,#707d91,#262b33);
-    border-width: 20px;
-    border-radius: 10px;    
-}
-
-#colCards {
-    margin-top: 4%;
-    margin-bottom: 4%;
-}
-
-#movieCard {
-    background-color: #0169a4;
-    color: white;
-    border-radius: 15px;
-    font-size: 0.95rem;
-}
-
-#shopCard {
-    background-color: #0169a4;
-    color: white;
-    border-radius: 15px;
-    font-size: 0.95rem;
-}
-
-#ticketCard {
-    background-color: #0169a4;
-    color: white;
-    border-radius: 15px;
-    font-size: 0.95rem;
-}
-
-</style>
