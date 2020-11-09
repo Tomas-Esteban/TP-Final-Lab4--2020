@@ -19,10 +19,7 @@
           <div class="form-group col-md-12">
             <label for="inputCiudad"><i style="color: red;">&#42&nbsp</i>Ciudad</label>
             <select id="inputCiudad" class="form-control">
-              <?php foreach ($cities as $city) {
-
-                echo ('<option value="' . $city->getIdCity() . '">' . $city->getCityName() . '</option>');
-              } ?>
+            <option>Mar del plata</option>
             </select>
           </div>
           <div class="form-group col-md-12">

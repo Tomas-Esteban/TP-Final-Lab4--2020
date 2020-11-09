@@ -5,15 +5,15 @@
     class Screening{
         
         private $idScreening;
-	private $idMovie;
+		private $idMovie;
         private $idMovieIMDB;
         private $startDate;
         private $lastDate;
         private $idRoom;
         private $idCinema;
         private $Dimension;
-		    private $Audio;
-		    private $Price;
+		private $Audio;
+		private $Price;
         private $Subtitles;
         private $startHour;
         private $finishHour;

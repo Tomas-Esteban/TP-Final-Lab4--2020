@@ -62,7 +62,7 @@ class cinemaDAO
 			}
 			return $cinemaList;
 		} catch (Exception $ex) {
-			return null;
+			return $ex;
 		}
 	}
 	
@@ -132,5 +132,22 @@ class cinemaDAO
 			return null;
 		}
 	}
+	public function GetCinemaAddress()
+    {
+		try {
+			$addressList = array();
+			$query = "SELECT * FROM " . $this->tableName;
+			$connection = Connection::GetInstance();
+			$result = $connection->Execute($query);
+
+			foreach ($result as $row) {
+				$address = $row["Address"];
+				array_push($addressList, $address);
+			}
+			return $addressList;
+		} catch (Exception $ex) {
+			return $ex;
+		}
+    }
 
 }

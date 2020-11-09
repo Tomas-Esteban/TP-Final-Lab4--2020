@@ -17,12 +17,9 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
         public function add($screening){
 
             try{
-                $query = "INSERT INTO " . $this->tableName . " (IdMovie,IdMovieIMDB, StartDate, LastDate, IdRoom, 
-                IdCinema, Dimension, Audio, Subtitles, StartHour, FinishHour, Price)
-                VALUES (:IdMovie, :IdMovieIMDB, :StartDate, :LastDate, :IdRoom, 
-                :IdCinema, :Dimension, :Audio, :Subtitles, :StartHour, :FinishHour, :Price);";
-
-
+                $query = "INSERT INTO " . $this->tableName . " ( IdMovieIMDB,  IdMovie,  StartDate,  LastDate,  StartHour,  FinishHour,  Price,  IdRoom,  IdCinema,  Audio,  Subtitles,  Dimension)
+                                                        VALUES (:IdMovieIMDB, :IdMovie, :StartDate, :LastDate, :StartHour, :FinishHour, :Price, :IdRoom, :IdCinema, :Audio, :Subtitles, :Dimension);";
+                $finish = $screening->getStartHour();
                 $parameters["IdMovie"] = $screening->getIdMovie();
                 $parameters["IdMovieIMDB"] = $screening->getIdMovieIMDB();
                 $parameters["StartDate"] = $screening->getStartDate();
@@ -370,10 +367,10 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
         $screeningList = $this->GetScreeningByIdRoom($screening->getIdRoom());
         $exist = true;
        
-        foreach($screeningList as $value){    
-            if($value->getStartDate() == $screening->getStartDate()){
+        foreach($screeningList as $screen){    
+            if($screen->getStartDate() == $screening->getStartDate()){
                 echo "Entra en el if StartDate";
-                if($value->getStartHour() == $screening->getStartHour()){
+                if($screen->getStartHour() == $screening->getStartHour()){
                     $exist=false;
                 echo "Entra en el if StartHour";
                 }

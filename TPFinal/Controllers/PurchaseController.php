@@ -1,23 +1,22 @@
 <?php
 
 namespace Controllers;
-use DAO\CitiesDAO as CitiesDAO;
+
 use DAO\MoviesDAO as MoviesDAO;
-use DAO\cinemaDAO as CinemasDAO;
+use DAO\CinemaDAO as CinemaDAO;
 use DAO\UserDAO as UserDAO;
 use Models\User as User;
 
 class PurchaseController
 {
-    private $CitiesDAO;
+
     private $MoviesDAO;
-    private $CinemasDAO;
+    private $CinemaDAO;
 
     public function __construct()
     {
-        $this->CitiesDAO = new CitiesDAO();
         $this->MoviesDAO = new MoviesDAO();
-        $this->CinemasDAO = new CinemasDAO();
+        $this->CinemaDAO = new CinemaDAO();
     }
 
     public function View($message = ""){
@@ -31,7 +30,7 @@ class PurchaseController
     }
 
     public function LoadCities(){
-        return $this->CitiesDAO->GetAll(); 
+        return $this->CinemaDAO->GetCinemaAddress(); 
     }
 
     public function LoadMovies(){

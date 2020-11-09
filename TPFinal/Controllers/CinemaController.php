@@ -136,11 +136,6 @@ class CinemaController
         }
     }
 
-    public function GetAll()
-    {
+   
 
-        $cinemaList = $this->cinemaDAO->getAll();
-
-        return $cinemaList;
-    }
 }
