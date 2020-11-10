@@ -25,19 +25,19 @@
           <div class="form-group col-md-12">
             <label for="inputPelicula"><i style="color: red;">&#42&nbsp</i>Pelicula</label>
             <select id="inputPelicula" class="form-control">
-              <?php if (isset($movies)) {
-                foreach ($movies as $movie) {
-                  echo ('<option>' . $movie['MovieName'] . '</option>');
-                }
+              <?php if (isset($screenings)) {
+                foreach ($screenings as $screen) {?>
+                  <option value = " "> <?php echo $movies->GetMovieByID($screen->getIdMovie());?> </option>
+                <?php }
               } ?>
             </select>
           </div>
           <div class="form-group col-md-12">
             <label for="inputCine"><i style="color: red;">&#42&nbsp</i>Cine</label>
             <select id="inputCine" class="form-control">
-              <?php if (isset($cinemas)) {
-                foreach ($cinemas as $cinema) {
-                  echo ('<option>' . $cinema['cinemaname'] . '</option>');
+            <?php if (isset($screenings)) {
+                foreach ($screenings as $screen) {
+                  echo '<option>' .$cine->getCineNameByID($screen->getIdCinema()) . '</option>';
                 }
               } ?>
             </select>
@@ -47,8 +47,8 @@
             <label for="inputFuncion"><i style="color: red;">&#42&nbsp</i>Funcion</label>
             <select id="inputFuncion" class="form-control">
               <?php if (isset($screenings)) {
-                foreach ($screenings as $screening) {
-                  echo ('<option>' . $screening['StartDate'] . '</option>');
+                foreach ($screenings as $screen) {
+                  echo ('<option>' . $screening->getStartDate() . '</option>');
                 }
               } ?>
             </select>

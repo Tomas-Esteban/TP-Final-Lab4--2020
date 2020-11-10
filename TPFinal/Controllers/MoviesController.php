@@ -26,6 +26,11 @@ class MoviesController
 		return $var;
 	}
 
+	public function GetMovieByID($movieID)
+	{
+		$var = json_encode($this->moviesDAO->getByMovieId($movieID));
+		return $var;
+	}
 	public function ShowApiMovies($movieList = null)
 	{
 		if ($movieList == null) {

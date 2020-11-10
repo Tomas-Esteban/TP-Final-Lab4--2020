@@ -365,15 +365,21 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
 
         $screeningList = array();
         $screeningList = $this->GetScreeningByIdRoom($screening->getIdRoom());
-        $exist = true;
-       
+        $exist = true; 
+
         foreach($screeningList as $screen){    
+            var_dump($screen);
+            echo $screen->getStartDate();
             if($screen->getStartDate() == $screening->getStartDate()){
-                echo "Entra en el if StartDate";
                 if($screen->getStartHour() == $screening->getStartHour()){
-                    $exist=false;
-                echo "Entra en el if StartHour";
+                    $exist=true;
                 }
+                else{
+                    $exist = false;
+                }
+            }
+            else{
+                $exist = flase;
             }
         }
         return $exist;

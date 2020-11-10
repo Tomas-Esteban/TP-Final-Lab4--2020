@@ -133,7 +133,7 @@ function remove($movies)
 		}
 	}
 
-	/* 	public function getMovieGenders($movies)
+	 	public function getMovieGenders($movies)
 	{
 		try
 		{
@@ -152,9 +152,9 @@ function remove($movies)
 		{
 			return null;
 		}
-	} */
+	} 
 
-	/* 	public function saveGeneros($Movies, $generos)
+	 	public function saveGeneros($Movies, $generos)
 	{
 		try
 		{
@@ -172,7 +172,7 @@ function remove($movies)
 		{
 			throw $ex;
 		}
-	} */
+	} 
 
 	public function getByMovieId($idMovie)
 	{

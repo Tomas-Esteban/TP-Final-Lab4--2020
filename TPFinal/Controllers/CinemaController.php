@@ -136,6 +136,12 @@ class CinemaController
         }
     }
 
+    public function getCineNameByID($cineID){
+
+        $cine = $this->cinemaDAO->GetCineById($cineID);
+        $name = $cine->getCinemaName();
+        return $name;
+    }
    
 
 }

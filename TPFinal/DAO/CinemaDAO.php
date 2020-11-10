@@ -85,7 +85,6 @@ class cinemaDAO
 			$connection = Connection::GetInstance();
 			//$result = $this->connection->execute($query);
 			$result = $connection->exec($query);
-
 			foreach ($result as $row) {
 				$cinema->setIdCinema($row["IdCinema"]);
 				$cinema->setCinemaName($row["CinemaName"]);

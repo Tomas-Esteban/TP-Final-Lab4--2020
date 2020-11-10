@@ -77,9 +77,9 @@ class ScreeningController{
 			
 			$screeningsXday = array();
 			$screeningsXday = $this->screeningDAO->distinctScreeningPerDay($screening);
-			
+			var_dump($screeningsXday);	
 			foreach($screeningsXday as $dateScreening){
-			
+				
 				if($this->screeningDAO->validateScreening($dateScreening) == true){
 					$this->screeningDAO->add($dateScreening);
 				}
