@@ -368,8 +368,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
         $exist = true; 
 
         foreach($screeningList as $screen){    
-            var_dump($screen);
-            echo $screen->getStartDate();
+            $screen = new Screening();
             if($screen->getStartDate() == $screening->getStartDate()){
                 if($screen->getStartHour() == $screening->getStartHour()){
                     $exist=true;
@@ -379,7 +378,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 }
             }
             else{
-                $exist = flase;
+                $exist = false;
             }
         }
         return $exist;

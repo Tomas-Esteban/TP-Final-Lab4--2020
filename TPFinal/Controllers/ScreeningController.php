@@ -77,7 +77,6 @@ class ScreeningController{
 			
 			$screeningsXday = array();
 			$screeningsXday = $this->screeningDAO->distinctScreeningPerDay($screening);
-			var_dump($screeningsXday);	
 			foreach($screeningsXday as $dateScreening){
 				
 				if($this->screeningDAO->validateScreening($dateScreening) == true){
@@ -86,7 +85,7 @@ class ScreeningController{
 				else if($screeningsXday == NULL){
 					echo "No valida";
 				}
-				else echo "La existe una función a esa hora";
+				else echo "Ya existe una función a esa hora";
 			}
 
 			$screenings = array();
