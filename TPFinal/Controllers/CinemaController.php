@@ -68,11 +68,9 @@ class CinemaController
         }
     }
 
-    public function Add($cinemaName, $address)
-    {
+    public function Add($cinemaName, $address){
         if (Validate::Logged() && Validate::AdminLog()) { /*<---------------------------------------------*/
 
-            
             $id = 0;
             if ($this->cinemaDAO->getCinemaByName($cinemaName)) {
                 $this->ShowAddView("Cine ya existente");
@@ -142,6 +140,9 @@ class CinemaController
         $name = $cine->getCinemaName();
         return $name;
     }
-   
+   public function GetAll(){
+       $cinemaList = $this->cinemaDAO->GetAll();
+       return $cinemaList;
+   }
 
 }

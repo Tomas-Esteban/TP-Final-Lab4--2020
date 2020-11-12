@@ -142,10 +142,12 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-            <form action="<?php echo FRONT_ROOT ?>Screening/AddScreeningToDatabase" method="GET">
+            <form action="<?php echo FRONT_ROOT ?>Screening/AddScreeningToDatabase">
             <div class="modal-body">
-                
                     <div class="form-row">
+                        <div class ="form-row">
+                        <input type="hidden" name="idMovieIMDB" value="<?php echo $movies->getIdMovieIMDB(); ?>">
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="inputFechaDesde"><i style="color: red;">&#42&nbsp</i>Fecha desde</label>
                             <input type="date" min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>" class="form-control" id="inputFechaDesde" name="inputFechaDesde" placeholder="Fecha desde">
@@ -184,7 +186,6 @@
                                     <option value="<?php echo $room->getIdRoom();?>"  ><?php echo $room->getRoomNumber();?></option>
                                     <?php }?>
                                 </select>
-                        
                         </div>
                     </div>
                     <div class="form-group">      
@@ -201,29 +202,21 @@
                     </div>
                     <div class="form-group">      
                         <label for="inputAudio"><i style="color: red;">&#42&nbsp</i>Audio</label>
-                        <br>        
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="OptionAudioOriginal" name="audio" class="custom-control-input" value="Original">
-                            <label class="custom-control-label" for="OptionAudioOriginal" value="Original">Original</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="OptionAudioDoblado" name="audio" class="custom-control-input" value="Doblado">
-                            <label class="custom-control-label" for="OptionAudioDoblado" value="Doblado">Doblado</label>
-                        </div>
+                        <select id="inputAudio" name="inputAudio" class="form-control">
+                            <option selected>Elige una opcion</option>
+                            <option value = "original">Original</option>
+                            <option value = "doblada">Doblada</option>
+                        </select>
                     </div>
                     <div class="form-group">      
-                        <label for="inputSubtitulos"><i style="color: red;">&#42&nbsp</i>Subtitulos</label>
-                        <br>        
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="OptionSubtitulosActivados" name="subtitulos" class="custom-control-input" value="Sí">
-                            <label class="custom-control-label" for="OptionSubtitulosActivados" value="Sí">Si</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="OptionSubtitulosDesactivados" name="subtitulos" class="custom-control-input" value="No">
-                            <label class="custom-control-label" for="OptionSubtitulosDesactivados" value="No">No</label>
-                        </div>
+                        <label for="inputSubtitulos"><i style="color: red;">&#42&nbsp</i>Subtitulos</label>    
+                        <select id="inputSubtitulos" name="inputSubtitulos" class="form-control">
+                            <option selected>Elige una opcion</option>
+                            <option value = "si">Si</option>
+                            <option value = "no">No</option>
+                        </select>
                     </div>
-                    <input type="hidden" name="idMovieIMDB" value="<?php echo $movies->getIdMovieIMDB(); ?>">
+                    
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
