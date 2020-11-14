@@ -36,7 +36,7 @@ require_once("navbar.php");
                         </div>                     
                     </div>                    
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspSiguiente</button>
-                    <button type="button" class="btn btn-primary"><i class="fas fa-arrow-left"></i>&nbspVolver</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-left"></i>&nbspVolver</button>
                 </form>
                 <!-- form -->
             </div>

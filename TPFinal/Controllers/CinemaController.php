@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Exception;
 use DAO\CinemaDAO as CinemaDAO;
 use DAO\RoomDAO as RoomDAO;
 use DAO\AddressDAO as addressDAO; 
@@ -9,7 +10,6 @@ use Controllers\RoomController as RoomController;
 use Models\Movie as Movie;
 use Models\Cinema as Cinema;
 use Models\Room as Room;
-use Exception;
 use Util\Validate;
 use Controllers\HomeController as HomeController;
 

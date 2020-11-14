@@ -4,50 +4,11 @@ CREATE DATABASE MOVIEPASSDB;
 
 USE MOVIEPASSDB;
 
-create table Countries (
-    IdCountry int AUTO_INCREMENT,
-    CountryName varchar(50) not null UNIQUE,
-    CountryCode varchar(10) not null UNIQUE,
-    constraint Pk_Countries primary key (IdCountry)
-);
-
-create table States (
-    IdState int AUTO_INCREMENT,
-    StateName varchar(50) not null,
-    IdCountry int not null,
-    constraint Pk_States primary key (IdState),
-    constraint Fk_Country foreign key (IdCountry)
-        references Countries (IdCountry)
-);
-
-create table Cities (
-    IdCity int AUTO_INCREMENT,
-    CityName varchar(50) not null,
-    ZipCode int not null,
-    IdState int not null,
-    constraint Pk_Cities primary key (IdCity),
-    constraint Fk_State foreign key (IdState)
-        references States (IdState)
-);
-
-create table Addresses (
-    IdAddress int AUTO_INCREMENT,
-    Street varchar(100) not null,
-    NumberStreet int not null,
-    Department varchar(10),
-    DepartmentFloor SmallInt,
-    IdCity int not null,
-    constraint Pk_Addresses primary key (IdAddress),
-    constraint Fk_Cities foreign key (IdCity)
-        references Cities (IdCity)
-);
-
 create table Cinemas (
     IdCinema int AUTO_INCREMENT,
     CinemaName varchar(50) not null,
     Street varchar(100) not null,
-    constraint Pk_Cinema primary key (IdCinema),
-    
+    constraint Pk_Cinema primary key (IdCinema)
 );
 
 create table NonWorkDays (

@@ -25,7 +25,7 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
                 $parameters["StartDate"] = $screening->getStartDate();
                 $parameters["LastDate"] = $screening->getLastDate();
                 $parameters["StartHour"] = $screening->getStartHour();
-                $parameters["FinishHour"] = 2;
+                $parameters["FinishHour"] = $screening->getFinishHour();
                 $parameters["Price"] = $screening->getPrice();
                 $parameters["IdRoom"] = $screening->getIdRoom();
                 $parameters["IdCinema"] = $screening->getIdCinema();

@@ -159,7 +159,7 @@
                     </div>
                     <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputFechaDesde"><i style="color: red;">&#42&nbsp</i>Hora de Inicio</label>
+                                <label for="inputHoraInicio"><i style="color: red;">&#42&nbsp</i>Hora de Inicio</label>
                                 <input type="time" class="form-control" id="inputHoraInicio" name="inputHoraInicio" placeholder="Hora de Inicio">
                             </div>
                             <div class="form-group col-md-6">
@@ -212,8 +212,8 @@
                         <label for="inputSubtitulos"><i style="color: red;">&#42&nbsp</i>Subtitulos</label>    
                         <select id="inputSubtitulos" name="inputSubtitulos" class="form-control">
                             <option selected>Elige una opcion</option>
-                            <option value = "si">Si</option>
-                            <option value = "no">No</option>
+                            <option value = "1">Si</option>
+                            <option value = "2">No</option>
                         </select>
                     </div>
                     

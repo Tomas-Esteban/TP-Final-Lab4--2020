@@ -1,8 +1,9 @@
 <?php 
 
-require_once("navbar.php");
-use Controllers\CinemaController as cinemaController;
+    require_once("navbar.php");
+    use Controllers\CinemaController as cinemaController;
 ?> 
+
 <style>
 #box {
     margin-top: 2%;
@@ -11,6 +12,7 @@ use Controllers\CinemaController as cinemaController;
 }
 
 </style>
+
 <body>
 <div class="container">
         <!-- Inicio Index -->
@@ -52,7 +54,7 @@ use Controllers\CinemaController as cinemaController;
                         </div>                        
                     </div>                    
                     <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>&nbspSiguiente</button>
-                    <button type="button" class="btn btn-primary"><i class="fas fa-arrow-left"></i>&nbspVolver</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-left"></i>&nbspVolver</button>
                 </form>
                 <!-- form -->
             </div>
@@ -75,12 +77,3 @@ use Controllers\CinemaController as cinemaController;
 </body>
 
 
-
-<style>
-#box {
-    margin-top: 2%;
-    min-height: 85vh !important;
-    border-radius: 25px;
-}
-
-</style>

@@ -1,12 +1,14 @@
 <?php
     namespace Controllers;
 
+    use Exception;
     use Models\Room as Room;
     use Models\Cinema as Cinema;
     use DAO\RoomDAO as RoomDAO;
     use DAO\CinemaDAO as CinemaDAO;
     use Util\Validate as Validate;
     use Controllers\HomeController as HomeController;
+    
 
     class RoomController 
     {

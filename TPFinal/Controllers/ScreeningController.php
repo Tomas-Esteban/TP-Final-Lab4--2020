@@ -58,10 +58,10 @@ class ScreeningController{
 			$screening->setStartHour($inputHoraInicio);
 			
 			$duration = $movies->getDuration();
-			$dateHour= $inputFechaDesde." ".$inputHoraInicio;
+			$dateHour= $inputHoraInicio;
 			$stringHour = "+".$duration." minutes";
 			$newDate = strtotime($stringHour,strtotime($dateHour));
-			$newDate= date('Y-m-d H:i:s', $newDate);
+			$newDate= date('H:i:s', $newDate);
 
 			$screening->setFinishHour($newDate);
 			$screening->setPrice($inputPrice);
