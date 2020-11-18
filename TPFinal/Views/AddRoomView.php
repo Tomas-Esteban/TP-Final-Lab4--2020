@@ -22,7 +22,6 @@
             </div>
             <!-- form     -->
             <div class="col-md-10">
-
                 <form action = "<?php echo FRONT_ROOT ?>Room/AddMoreRoom" method="post">
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6">

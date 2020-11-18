@@ -246,7 +246,7 @@ textbox {
               <div class="flip-card-back">
                 <h1> <?php echo $movies->getMovieName(); ?> </h1> 
                 <p><?php echo $movies->getReleaseDate(); ?></p> 
-                <p><a id="buyTicket" href = "#"></a><button class="button">Comprar</a><i class="fas fa-ticket-alt"></i></button></p>
+                <p><a id="buyTicket" href = "#"><button class="button">Comprar</a><i class="fas fa-ticket-alt"></i></button></p>
               </div>
             </div>
           </div>

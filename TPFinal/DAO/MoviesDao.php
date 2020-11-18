@@ -348,4 +348,20 @@ public function edit($movies)
 	
 
 	} */
+	
+	public function getNameByIdIMDB($idMovieIMDB)
+	{
+		try {
+			$query = "SELECT * FROM " . $this->tableName . " WHERE IdMovieIMDB = " . $idMovieIMDB . ";";
+			$this->connection = Connection::GetInstance();
+			$resultSet = $this->connection->Execute($query);
+
+			foreach ($resultSet as $row) {
+				$movies = $row["MovieName"];
+				return $movies;
+			}
+		} catch (Exception $ex) {
+			return null;
+		}
+	}
 }

@@ -79,6 +79,10 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
 	}
 
     }
+    public function GetMovieScreening($screening){
+        $movie = $screening->getIdMovieIMDB();
+        return $movie;
+    }
 
     public function GetScreeningById($idScreening){
         try{

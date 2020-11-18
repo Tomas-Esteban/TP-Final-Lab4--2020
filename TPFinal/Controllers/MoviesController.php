@@ -224,4 +224,12 @@ class MoviesController
 		}
 		require_once(VIEWS_PATH . "AdminMoviesPlayingView.php");
 	}
+
+
+	public function getNameByIDMB($idIDMB){
+
+		$movie = $this->moviesDAO->getNameByIdIMDB($idIDMB);
+		return $movie;
+
+	}
 }

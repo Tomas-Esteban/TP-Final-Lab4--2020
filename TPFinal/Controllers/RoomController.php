@@ -7,8 +7,7 @@
     use DAO\RoomDAO as RoomDAO;
     use DAO\CinemaDAO as CinemaDAO;
     use Util\Validate as Validate;
-    use Controllers\HomeController as HomeController;
-    
+    use Controllers\HomeController as HomeController;    
 
     class RoomController 
     {

@@ -193,19 +193,19 @@
                         <br>        
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="Option2D" name="dimension" class="custom-control-input" value="2D">
-                            <label class="custom-control-label" for="Option2D" value="2D">2D</label>
+                            <label class="custom-control-label" for="Option2D" value="2">2D</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="Option3D" name="dimension" class="custom-control-input" value="3D">
-                            <label class="custom-control-label" for="Option3D" value="3D">3D</label>
+                            <label class="custom-control-label" for="Option3D" value="3">3D</label>
                         </div>
                     </div>
                     <div class="form-group">      
                         <label for="inputAudio"><i style="color: red;">&#42&nbsp</i>Audio</label>
                         <select id="inputAudio" name="inputAudio" class="form-control">
                             <option selected>Elige una opcion</option>
-                            <option value = "original">Original</option>
-                            <option value = "doblada">Doblada</option>
+                            <option value = "1">Original</option>
+                            <option value = "2">Doblada</option>
                         </select>
                     </div>
                     <div class="form-group">      

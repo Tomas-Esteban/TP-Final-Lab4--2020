@@ -153,7 +153,7 @@ create table Screenings (
     StartDate Date not null,
     LastDate Date not null,
     StartHour varchar(10) not null,
-    FinishHour datetime not null,
+    FinishHour varchar(10) not null,
     Price decimal,
     IdRoom int not null,
     IdCinema int not null,

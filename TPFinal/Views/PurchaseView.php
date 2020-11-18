@@ -27,7 +27,7 @@
             <select id="inputPelicula" class="form-control">
               <?php if (isset($screenings)) {
                 foreach ($screenings as $screen) {?>
-                  <option value = " "> <?php echo $movies->GetMovieByID($screen->getIdMovie());?> </option>
+                  <option value = " "> <?php echo $movie->getNameByIDMB($screen->getIdMovieIMDB());?> </option>
                 <?php }
               } ?>
             </select>
@@ -36,10 +36,10 @@
             <label for="inputCine"><i style="color: red;">&#42&nbsp</i>Cine</label>
             <select id="inputCine" class="form-control">
             <?php if (isset($screenings)) {
-                foreach ($screenings as $screen) {
-                  echo '<option>' .$cine->getCineNameByID($screen->getIdCinema()) . '</option>';
-                }
-              } ?>
+                foreach ($screenings as $screen) {?>
+                  <option value = " "> <?php echo $cine->getCineNameByID($screen->getIdCinema());?> </option> ;
+                
+              <?php } } ?>
             </select>
 
           </div>
@@ -47,12 +47,13 @@
             <label for="inputFuncion"><i style="color: red;">&#42&nbsp</i>Funcion</label>
             <select id="inputFuncion" class="form-control">
               <?php if (isset($screenings)) {
-                foreach ($screenings as $screen) {
-                  echo ('<option>' . $screening->getStartDate() . '</option>');
-                }
-              } ?>
+                foreach ($screenings as $screen) {?>
+                  <option value = " "> <?php echo $screen;?> </option> ;
+              <?php }
+             } ?>
             </select>
           </div>
+
           <div class="form-group col-md-12">
             <label for="inputCantAsientos"><i style="color: red;">&#42&nbsp</i>Cantidad de asientos</label>
             <input type="number" max="10" min="1" class="form-control" id="inputCantAsientos" placeholder="Cantidad de asientos">

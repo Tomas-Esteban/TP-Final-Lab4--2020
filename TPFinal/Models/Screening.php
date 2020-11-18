@@ -4,19 +4,21 @@
 
     class Screening{
         
-        private $idScreening;
+		private $idScreening;
+		private $idMovieIMDB;
 		private $idMovie;
-        private $idMovieIMDB;
         private $startDate;
         private $lastDate;
+        private $startHour;
+		private $finishHour;
+		private $Price;
         private $idRoom;
         private $idCinema;
-        private $Dimension;
+		private $Subtitles;
 		private $Audio;
-		private $Price;
-        private $Subtitles;
-        private $startHour;
-        private $finishHour;
+		private $Dimension;
+
+        
 
 	public function getIdScreening(){
 		return $this->idScreening;

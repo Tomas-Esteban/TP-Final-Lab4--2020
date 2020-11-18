@@ -65,22 +65,22 @@ class ScreeningController{
 
 			$screening->setFinishHour($newDate);
 			$screening->setPrice($inputPrice);
-			$screening->setIdCinema($inputCinema);
 			$screening->setIdRoom($inputSala);
-			$screening->setDimension($inputDimension);
-			$screening->setAudio($inputAudio);
+			$screening->setIdCinema($inputCinema);
 			$screening->setSubtitles($inputSubtitulos);
+			$screening->setAudio($inputAudio);
+			$screening->setDimension($inputDimension);
 			
 			$screeningsXday = array();
 			$screeningsXday = $this->screeningDAO->distinctScreeningPerDay($screening);
 
 			if($screeningsXday != NULL){
 				foreach($screeningsXday as $dateScreening){
-					$validate = $this->screeningDAO->validateScreening($dateScreening);
-					if($validate == false){
+					//$validate = $this->screeningDAO->validateScreening($dateScreening);
+					//if($validate == false){
 						$this->screeningDAO->add($dateScreening);
-					}
-					else echo "Ya existe una función a esa hora";
+					//}
+					//else echo "Ya existe una función a esa hora";
 				}
 			}
 			$screenings = array();
@@ -139,6 +139,18 @@ class ScreeningController{
 		$idMovieIMDB = $movies->getIdMovieIMDB;
 		require_once(VIEWS_PATH . "Views\ScreeningView.php");
 	}
+
+	public function GetMovieScreening($screening){
+
+		$movie = $this->$screeningDAO->GetMovieScreening($screening);
+		return $movie;
+	}
+
+	public function GetAll(){
+		$screenList = $this->screeningDAO->getAll();
+        return $screenList;
+	}
+
 
 }
 ?>

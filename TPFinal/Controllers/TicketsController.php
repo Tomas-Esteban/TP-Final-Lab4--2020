@@ -27,4 +27,10 @@ class TicketsController
         }
         require_once(VIEWS_PATH . "TicketsView.php");
     }
+
+    public function GetOrdersByUser(){
+
+
+        
+    }
 }
