@@ -41,7 +41,6 @@
                 
               <?php } } ?>
             </select>
-
           </div>
           <div class="form-group col-md-12">
             <label for="inputFuncion"><i style="color: red;">&#42&nbsp</i>Funcion</label>

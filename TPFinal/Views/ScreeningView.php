@@ -180,14 +180,12 @@
                             <label for="inputSala"><i style="color: red;">&#42&nbsp</i>Sala</label>
                             <select id="inputSala" name="inputSala" class="form-control">
                             <option selected>Elije una</option>
-                            <?php 
-                                $cineP = document.getElementByID("inputCinema");
-                                $roomsList = $rooms->getRoomByIdCinema($cineP);
-                                foreach ($roomsList as $room) {
-                                ?>
-                                    <option value="<?php echo $room->getIdRoom();?>"  ><?php echo $room->getRoomNumber();?></option>
-                                <?php } ?>
-                                </select>
+                            <?php if(isset($rooms)){
+                                foreach($rooms as $r){?>
+                                    <option value = " "><?php echo $r->getRoomByIdCinema($cinema->getIdCinema());?> </option>
+                               <?php }
+                            }?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">      
