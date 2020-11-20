@@ -139,6 +139,30 @@
 	    		return $ex;
 		    }
     	}
-      
+        public function getByIdCine($IdCine)
+        {
+            try 
+            {
+                $list = array();
+                $query = "SELECT * FROM " . $this->tableName . " WHERE id_cine = '" . $IdCine . "';";
+                $this->connection = Connection::GetInstance();
+                $resultSet = $this->connection->Execute($query);
+                foreach ($resultSet as $row) 
+                {
+                    $sala = new Sala();
+                    $sala->setId($row["id_sala"]);
+                    $sala->setIdCine($row["id_cine"]);
+                    $sala->setNombre($row["nombre"]);
+                    $sala->setPrecio($row["precio"]);
+                    $sala->setCapacidad($row["capacidad"]);
+                    array_push($list, $sala);
+                }
+                return $list;
+            } 
+            catch (Exception $ex) 
+            {
+                return $ex;
+            }
+        }
     }
 ?>

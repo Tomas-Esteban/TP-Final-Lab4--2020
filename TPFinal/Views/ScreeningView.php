@@ -110,8 +110,7 @@
                                     <div class="col-md-5">
                                         <p class="ticketText">Audio:&nbsp<span class="ticketData"><?php echo $screening->getAudio();?></span></p>
                                         <p class="ticketText">Subtitulos:&nbsp<span class="ticketData"><?php echo $screening->getSubtitles();?></span></p>
-                                        <p class="ticketText">Horario de inicio:&nbsp<span class="ticketData"><?php echo $screening->getStartHour();?></span>
-                                        </p>
+                                        <p class="ticketText">Horario de inicio:&nbsp<span class="ticketData"><?php echo $screening->getStartHour();?></span></p>
                                         <p class="ticketText">Precio:&nbsp<span
                                                 class="ticketData"><?php echo $screening->getPrice();?></span></p>
                                     </div>
@@ -177,14 +176,17 @@
                             <?php } ?>
                             </select>
                         </div>  
-                        
-                            <div class="form-group col-md-12">
-                                <label for="inputSala"><i style="color: red;">&#42&nbsp</i>Sala</label>
-                                <select id="inputSala" name="inputSala" class="form-control">
-                                <option selected>Elije una</option>
-                                <?php foreach ($rooms as $room) {?>
+                        <div class="form-group col-md-12">
+                            <label for="inputSala"><i style="color: red;">&#42&nbsp</i>Sala</label>
+                            <select id="inputSala" name="inputSala" class="form-control">
+                            <option selected>Elije una</option>
+                            <?php 
+                                $cineP = document.getElementByID("inputCinema");
+                                $roomsList = $rooms->getRoomByIdCinema($cineP);
+                                foreach ($roomsList as $room) {
+                                ?>
                                     <option value="<?php echo $room->getIdRoom();?>"  ><?php echo $room->getRoomNumber();?></option>
-                                    <?php }?>
+                                <?php } ?>
                                 </select>
                         </div>
                     </div>

@@ -151,5 +151,8 @@
         $roomList = $this->roomDAO->getAll();
         return $roomList;
     }
-      
+      public function getRoomByIdCinema($IdCinema){
+        $roomList = $this->getByCine()        
+        return $roomList;
+      }
     }
