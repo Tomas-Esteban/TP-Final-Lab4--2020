@@ -63,6 +63,7 @@
     <div id="box" class="row justify-content-center" style="background-color: rgba(255, 255, 255, 0.5);">
         <div id="colCarousel" class="col-md-10">
             <!-- Inicio carrusel -->
+            <?php  echo "Hola pardo";?>
             <div id="carouselMovies" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselMovies" data-slide-to="0" class="active"></li>
@@ -115,9 +116,19 @@
                             <h5 class="card-title">Peliculas</h5>
                             <p class="card-text">Vea la lista completa de películas en cartelera.</p>
                         </div>
-                        <div class="card-body">
-                            <a href=<?php echo FRONT_ROOT. "Movies/ShowApiMovies"?> class="btn btn-primary btn-block">Ver Cartelera</a>
-                        </div>
+                          <?php if (isset($_SESSION['isAdmin'])):?> 
+                             
+                            <div class="card-body"> 
+                                <a href=<?php echo FRONT_ROOT. "Movies/ShowApiMovies"?> class="btn btn-primary btn-block">Ver Cartelera</a>
+                             </div>       
+                            
+                        <?php elseif (!isset($_SESSION['isAdmin'])) :?>
+                            <div class="card-body">
+                                <a href=<?php echo FRONT_ROOT. "Movies/ShowDataBaseMovies"?> class="btn btn-primary btn-block">Ver Cartelera</a>  
+                            </div>
+                    
+                        <?php endif;?>       
+                            
                     </div>
                 </div>
 

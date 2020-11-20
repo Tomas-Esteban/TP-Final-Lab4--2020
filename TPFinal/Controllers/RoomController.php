@@ -152,7 +152,7 @@
         return $roomList;
     }
       public function getRoomByIdCinema($IdCinema){
-        $roomList = $this->getByCine()        
+        $roomList = $this->getByCine();       
         return $roomList;
       }
     }
