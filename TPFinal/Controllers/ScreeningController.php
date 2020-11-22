@@ -43,6 +43,9 @@ class ScreeningController{
 					$screenings = $this->screeningDAO->getScreeningByIdMovie($idMovie);
 					$cinemas = $this->cinemaDAO->getAll();
 				}
+				echo "Te ganaste una cogida";
+				echo $cinemas;
+				var_dump($cinemas);
 				require_once(VIEWS_PATH."ScreeningView.php");
 	}
 	public function AddScreeningToDatabase($idMovieIMDB,$inputFechaDesde,$inputFechaHasta,$inputHoraInicio,$inputPrice,$inputCinema,$inputSala,$inputDimension,$inputAudio,$inputSubtitulos){

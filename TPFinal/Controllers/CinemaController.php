@@ -136,9 +136,8 @@ class CinemaController
 
     public function getCineNameByID($cineID){
 
-        $cine = $this->cinemaDAO->GetCineById($cineID);
-        $name = $cine->getCinemaName();
-        return $name;
+        $cine = $this->cinemaDAO->GetCinemaById($cineID);
+        return $cine;
     }
    public function GetAll(){
        $cinemaList = $this->cinemaDAO->GetAll();

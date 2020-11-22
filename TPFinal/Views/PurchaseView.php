@@ -25,9 +25,9 @@
           <div class="form-group col-md-12">
             <label for="inputPelicula"><i style="color: red;">&#42&nbsp</i>Pelicula</label>
             <select id="inputPelicula" class="form-control">
-              <?php if (isset($screenings)) {
-                foreach ($screenings as $screen) {?>
-                  <option value = " "> <?php echo $movie->getNameByIDMB($screen->getIdMovieIMDB());?> </option>
+              <?php if (isset($screen)) {
+                foreach ($screen as $s) {?>
+                  <option value = " "> <?php echo $mC->getNameByIDMB($s->getIdMovieIMDB());?> </option>
                 <?php }
               } ?>
             </select>
@@ -35,9 +35,9 @@
           <div class="form-group col-md-12">
             <label for="inputCine"><i style="color: red;">&#42&nbsp</i>Cine</label>
             <select id="inputCine" class="form-control">
-            <?php if (isset($screenings)) {
-                foreach ($screenings as $screen) {?>
-                  <option value = " "> <?php echo $cine->getCineNameByID($screen->getIdCinema());?> </option> ;
+            <?php if (isset($screen)) {
+                foreach ($screen as $s) {?>
+                  <option value = " "> <?php echo $cC->getCineNameByID($s->getIdCinema());?> </option> ;
                 
               <?php } } ?>
             </select>
@@ -45,9 +45,9 @@
           <div class="form-group col-md-12">
             <label for="inputFuncion"><i style="color: red;">&#42&nbsp</i>Funcion</label>
             <select id="inputFuncion" class="form-control">
-              <?php if (isset($screenings)) {
-                foreach ($screenings as $screen) {?>
-                  <option value = " "> <?php echo $screen;?> </option> ;
+              <?php if (isset($screen)) {
+                foreach ($screen as $s) {?>
+                  <option value = " "> <?php echo "Funcion: " . $s->getIdScreening() . "|" . "Fecha: " . $s->getStartDate() . "|" . "Horario: " . $s->getStartHour() . "|" . "Precio: " . $s->getPrice();?> </option> ;
               <?php }
              } ?>
             </select>
