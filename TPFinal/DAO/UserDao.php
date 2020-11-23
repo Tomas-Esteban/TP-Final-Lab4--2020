@@ -89,5 +89,18 @@ class UserDAO implements IUserDAO
 
         return $this->SearchUserByEmail($user->getEmail());
     }
+    public function GetUserIdbyName($user){
+        try{
+            $query = "SELECT * FROM " .$this->tableName ." WHERE UserName". $user->getUserName();
+            $this->connection = Connection::GetInstance();
+            $resultSet = $this->connection->Execute($query);
+            foreach($resultSet as $row){
+                $id = $row->getIdUser();
+                return $id;
+            }
+        } catch(Exception $ex){
+            throw $ex;
+        }
+    }
 
 }

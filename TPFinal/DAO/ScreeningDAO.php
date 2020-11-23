@@ -390,4 +390,22 @@ use Interfaces\IScreeningDAO as IScreeningDAO;
 
         return $exist;
     }
+    public function GetRoomByScreening($screening){
+        try{
+            
+            $query = "SELECT * FROM " .$this->tableName ." WHERE IdScreening". $screening->getIdScreening();
+            $this->connection = Connection::GetInstance();
+            $resultSet = $this->connection->Execute($query);
+    
+            foreach ($resultSet as $row) {
+                $room = $row->getIdRoom();
+                return $room;
+                }
+            }
+            catch(Exception $ex)
+            {
+                return null;
+            }
+    
+        }
 }

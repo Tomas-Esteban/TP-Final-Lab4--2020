@@ -177,6 +177,20 @@ create table Seats (
     constraint Fk_Room foreign key (IdRoom)
         references Rooms (IdRoom)
 );
+create table Dimensions (
+    IdDimension int AUTO_INCREMENT,
+    Dimension varchar(2) not null UNIQUE,
+    constraint Pk_Dimensions primary key (IdDimension),
+    constraint Chk_Dimension check (DimensionDescrip = '3D'
+        OR DimensionDescrip = '2D')
+);
+create table Languages (
+    IdLanguage int AUTO_INCREMENT,
+    CodLanguage varchar(10) not null UNIQUE,
+    Description varchar(50) not null UNIQUE,
+    constraint Pk_Languages primary key (IdLanguage)
+);
+
 
 create table Orders (
     IdOrder int AUTO_INCREMENT,
@@ -246,19 +260,19 @@ concat('$',orders.Total) as Total,
 screenings.startdate,
 rooms.roomnumber,
 movies.moviename,
-if(screenings.IdSubsLanguage is null, languages.description, concat('Sub ',languages.description)) as MovieLanguage,
-dimensions.dimensiondescrip,
+if(screenings.Subtitles is null, languages.description, concat('Sub ',languages.description)) as MovieLanguage,
+dimensions.Dimension,
 cinemas.cinemaname,
-concat(addresses.street,' ',addresses.numberstreet) as CinemaAddress,
+cinemas.Address as CinemaAddress,
 users.UserName
 FROM orders
 inner join screenings on screenings.IdScreening = orders.IdScreening
 inner join rooms on screenings.IdRoom = rooms.IdRoom
 inner join movies on screenings.IdMovie = movies.IdMovie
-inner join languages on languages.IdLanguage = screenings.IdSubsLanguage or languages.IdLanguage = screenings.IdAudioLanguage
+inner join languages on languages.IdLanguage = screenings.Subtitles or languages.IdLanguage = screenings.IdAudioLanguage
 inner join dimensions on dimensions.IdDimension = screenings.iddimension
 inner join cinemas on rooms.CinemaId = cinemas.IdCinema
-inner join addresses on cinemas.IdAddress = addresses.IdAddress
+inner join addresses on cinemas.Address = cinemas.Address
 inner join users on users.IdUser = orders.IdUser
 WHERE (users.IdUser = UserId AND screenings.StartDate > if(TodayDate is null,'0001-01-01',TodayDate))
 GROUP BY(orders.IdOrder) ORDER BY screenings.StartDate ASC;

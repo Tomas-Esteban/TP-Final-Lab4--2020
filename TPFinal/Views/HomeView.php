@@ -63,7 +63,7 @@
     <div id="box" class="row justify-content-center" style="background-color: rgba(255, 255, 255, 0.5);">
         <div id="colCarousel" class="col-md-10">
             <!-- Inicio carrusel -->
-            <?php  echo "Hola pardo";?>
+           
             <div id="carouselMovies" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselMovies" data-slide-to="0" class="active"></li>

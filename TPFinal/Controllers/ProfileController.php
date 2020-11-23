@@ -67,7 +67,10 @@ class ProfileController
             $this->View();
         }
     }
-
+    public function GetIdbyName($user){
+       $id = $this->userDAO->GetUserIdbyName($user);
+       return $id;
+    }
 
 }
 ?>

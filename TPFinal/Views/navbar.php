@@ -31,7 +31,10 @@
             </li>
             <li class="nav-item"></li>
             <a class="nav-link" href="';echo FRONT_ROOT. 'Room/ShowListView" tabindex="-1" aria-disabled="true"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbspListado de Salas</a>
-          </li>
+            </li>
+            <li class="nav-item"></li>
+            <a class="nav-link" href="';echo FRONT_ROOT. 'Statistics/View" tabindex="-1" aria-disabled="true"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbspeStadisticas</a>
+            </li>
           </ul>';
 
         } else {

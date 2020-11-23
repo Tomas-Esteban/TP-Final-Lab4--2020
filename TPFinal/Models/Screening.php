@@ -11,7 +11,7 @@
         private $lastDate;
         private $startHour;
 		private $finishHour;
-		private $Price;
+		private $price;
         private $idRoom;
         private $idCinema;
 		private $Subtitles;

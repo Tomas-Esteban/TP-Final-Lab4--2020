@@ -147,6 +147,22 @@ class cinemaDAO
 		} catch (Exception $ex) {
 			return $ex;
 		}
+	}
+	public function GetCinemaName()
+    {
+		try {
+			$addressList = array();
+			$query = "SELECT * FROM " . $this->tableName;
+			$connection = Connection::GetInstance();
+			$result = $connection->Execute($query);
+
+			foreach ($result as $row) {
+				$name = $row["CinemaName"];
+			}
+			return $name;
+		} catch (Exception $ex) {
+			return $ex;
+		}
     }
 	public function getCinemaByID($idCinema)
 	{

@@ -35,20 +35,19 @@ class ScreeningController{
 				{
 					$movies = $this->moviesDAO->getByIdMovieIMDB($idMovieIMDB);
 					$screenings = $this->screeningDAO->getScreeningByIdMovie($movies);
-					$cinemas = $this->cinemaDAO->getAll();
-					$rooms = $this->roomDAO->getAll();
+					$cinemas = $this->cinemaDAO->GetAll();
+					$rooms = $this->roomDAO->GetAll();
 				}
 				else
 				{
 					$screenings = $this->screeningDAO->getScreeningByIdMovie($idMovie);
-					$cinemas = $this->cinemaDAO->getAll();
+					$cinemas = $this->cinemaDAO->GetAll();
 				}
-				echo "Te ganaste una cogida";
-				echo $cinemas;
+				
 				var_dump($cinemas);
 				require_once(VIEWS_PATH."ScreeningView.php");
 	}
-	public function AddScreeningToDatabase($idMovieIMDB,$inputFechaDesde,$inputFechaHasta,$inputHoraInicio,$inputPrice,$inputCinema,$inputSala,$inputDimension,$inputAudio,$inputSubtitulos){
+	public function AddScreeningToDatabase($idMovieIMDB,$inputFechaDesde,$inputFechaHasta,$inputHoraInicio,$inputPrecio,$inputCinema,$inputSala,$inputDimension,$inputAudio,$inputSubtitulos){
 		
 		$screening = new Screening();
 			
@@ -67,7 +66,7 @@ class ScreeningController{
 			$newDate= date('H:i:s', $newDate);
 
 			$screening->setFinishHour($newDate);
-			$screening->setPrice($inputPrice);
+			$screening->setPrice($inputPrecio);
 			$screening->setIdRoom($inputSala);
 			$screening->setIdCinema($inputCinema);
 			$screening->setSubtitles($inputSubtitulos);
@@ -79,11 +78,11 @@ class ScreeningController{
 
 			if($screeningsXday != NULL){
 				foreach($screeningsXday as $dateScreening){
-					//$validate = $this->screeningDAO->validateScreening($dateScreening);
-					//if($validate == false){
+					$validate = $this->screeningDAO->validateScreening($dateScreening);
+					if($validate == false){
 						$this->screeningDAO->add($dateScreening);
-					//}
-					//else echo "Ya existe una función a esa hora";
+					}
+					else echo "Ya existe una función a esa hora";
 				}
 			}
 			$screenings = array();
@@ -154,6 +153,11 @@ class ScreeningController{
         return $screenList;
 	}
 
+	public function GetRoomScreening($screening){
+		$room = $this->$screeningDAO->GetRoomByScreening($screening);
+		return $room;
+
+	}
 
 }
 ?>

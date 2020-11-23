@@ -86,8 +86,7 @@
                             </span></p>
                     </div>
                     <div class="form-group col-md-3 align-self-center">
-                        <button id="addScreening" class="btn btn-success btn-block btn-lg" type="button" data-toggle="modal" data-target="#editFunctionModal"
-                            title="Agregar una función">+</button>
+                        <button id="addScreening" class="btn btn-success btn-block btn-lg" type="button" data-toggle="modal" data-target="#editFunctionModal" title="Agregar una función">+</button>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -141,7 +140,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-            <form action="<?php echo FRONT_ROOT ?>Screening/AddScreeningToDatabase">
+            <form action="<?php echo FRONT_ROOT ?>Screening/AddScreeningToDatabase" method="post">
             <div class="modal-body">
                     <div class="form-row">
                         <div class ="form-row">
@@ -172,7 +171,7 @@
                             <select id="inputCinema" name="inputCinema" class="form-control">
                             <option selected>Elije una</option>
                             <?php foreach ($cinemas as $cinema) {?>
-                            <option value="<?php echo $cinema->getIdCinema();?>"   ><?php echo $cinema->getCinemaName();?></option>
+                            <option value="<?php echo $cinema->getIdCinema();?>" ><?php echo $cinema->getCinemaName();?></option>
                             <?php } ?>
                             </select>
                         </div>  
@@ -190,15 +189,11 @@
                     </div>
                     <div class="form-group">      
                         <label for="inputDimension"><i style="color: red;">&#42&nbsp</i>Dimensión</label>
-                        <br>        
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="Option2D" name="dimension" class="custom-control-input" value="2D">
-                            <label class="custom-control-label" for="Option2D" value="2">2D</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="Option3D" name="dimension" class="custom-control-input" value="3D">
-                            <label class="custom-control-label" for="Option3D" value="3">3D</label>
-                        </div>
+                        <select id = "inputDimension" name = "inputDimension" class = "form-control">
+                        <option selected>Elige una opcion</option>
+                        <option value = "2">2D</option>
+                        <option value = "3">3D</option>
+                        </select>
                     </div>
                     <div class="form-group">      
                         <label for="inputAudio"><i style="color: red;">&#42&nbsp</i>Audio</label>

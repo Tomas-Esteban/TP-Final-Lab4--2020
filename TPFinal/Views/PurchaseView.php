@@ -44,10 +44,10 @@
           </div>
           <div class="form-group col-md-12">
             <label for="inputFuncion"><i style="color: red;">&#42&nbsp</i>Funcion</label>
-            <select id="inputFuncion" class="form-control">
+            <select id="inputFuncion" class="form-control" name = "inputFuncion">
               <?php if (isset($screen)) {
                 foreach ($screen as $s) {?>
-                  <option value = " "> <?php echo "Funcion: " . $s->getIdScreening() . "|" . "Fecha: " . $s->getStartDate() . "|" . "Horario: " . $s->getStartHour() . "|" . "Precio: " . $s->getPrice();?> </option> ;
+                  <option value = "<?= $s->getIdScreening();?>"> <?php echo "Funcion: " . $s->getIdScreening() . "|" . "Fecha: " . $s->getStartDate() . "|" . "Horario: " . $s->getStartHour() . "|" . "Precio: " . $s->getPrice();?> </option> ;
               <?php }
              } ?>
             </select>
@@ -55,7 +55,7 @@
 
           <div class="form-group col-md-12">
             <label for="inputCantAsientos"><i style="color: red;">&#42&nbsp</i>Cantidad de asientos</label>
-            <input type="number" max="10" min="1" class="form-control" id="inputCantAsientos" placeholder="Cantidad de asientos">
+            <input type="number"  class="form-control" id="inputCantAsientos" placeholder="Cantidad de asientos" name ="inputCantAsientos" >
           </div>
         </div>
 
