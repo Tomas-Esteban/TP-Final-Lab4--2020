@@ -40,17 +40,12 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-6">
+                                <p class="card-text">Ticket: <?php echo $t->getIdTicket(); ?> </p><br>
                                 <p class="card-text">Precio: <?php echo $t->getPrice(); ?> </p><br>
                                 <p class="card-text">Sala: <?php echo $t->getIdRoom(); ?> </p><br>
                                 <p class="card-text">Butaca: <?php echo $t->getIdSeat();?> </p><br>
                                 <p class="card-text">Nro Orden: <?php echo $t->getIdOrder(); ?> </p><br>
-                                
                             </div>
-                            <!--- <div class="col-sm-6">
-                                <p class="card-text">Pelicula: <?php/* echo($order['moviename']) ?> </p><br>
-                                <p class="card-text">Butacas: <?php echo($cant) ?> </p><br>
-                                <p class="card-text">Total: <?php echo($inputPrecio * $cant) */?> </p><br>
-                            </div>--->
                         </div>
                     </div>
                 </div>

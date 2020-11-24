@@ -23,21 +23,6 @@ require_once("navbar.php");
         <div class="col-md-10">
             <form action="<?php echo FRONT_ROOT ?>Tickets/Add" method="post" >
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name ="Name">
-                    </div>
-                </div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputPago"><i style="color: red;">&#42&nbsp</i>Tipo de pago</label>
-                        <select id="inputPago" class="form-control">
-                        <option value = "1">Efectivo</option>
-                        <option value = "2">Tarjeta</option>
-                        </select>
-                    </div>
-                </div>    
-                <div class="form-row justify-content-center">
                     <input hidden value = <?php $fecha?> name ="fecha">
                     <div class="form-group col-md-6">
                         <label for="inputPrecio"><i style="color: red;">&#42&nbsp</i>Monto a pagar</label>
@@ -68,7 +53,21 @@ require_once("navbar.php");
                         <p><?= $o ?></p>
                     </div>
                 </div>
-    
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label for="inputNombre"><i style="color: red;">&#42&nbsp</i>Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name ="Name">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label for="inputPago"><i style="color: red;">&#42&nbsp</i>Tipo de pago</label>
+                        <select id="inputPago" class="form-control">
+                        <option value = "1">Efectivo</option>
+                        <option value = "2">Tarjeta</option>
+                        </select>
+                    </div>
+                </div>    
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <button type="submit" class="btn btn-success btn-block"><i class="fas fa-save"></i>&nbspEnviar</button>

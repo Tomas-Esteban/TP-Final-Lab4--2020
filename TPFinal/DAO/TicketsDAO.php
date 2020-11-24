@@ -19,7 +19,6 @@ class TicketsDAO implements ITicketsDAO
         try{
             $query = "INSERT INTO " . $this->tableName . "( Price , IdRoom , IdSeat , IdOrder) VALUES ( :Price , :IdRoom , :IdSeat , :IdOrder);";
             
-            
             $parameters ["Price"]    = $ticket->getPrice();
             $parameters ["IdRoom"]   = $ticket->getIdRoom();
             $parameters ["IdSeat"]   = $ticket->getIdSeat();

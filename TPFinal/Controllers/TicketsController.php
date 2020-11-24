@@ -22,12 +22,12 @@ class TicketsController
     public function Add($precio,$room,$seat,$order){
         $ticket = new Ticket();
         $v = new TicketsController();
-        
+
         $ticket->setPrice($precio);
         $ticket->setIdRoom($room);
         $ticket->setIdSeat($seat);
         $ticket->setIdOrder($order);
-
+      
         $t = $this->ticketDAO->Add($ticket);
         
         $v->ShowTicketView();
@@ -72,7 +72,7 @@ class TicketsController
     }
 
     public function ShowTicketView($alertMessage = ""){
-        
+        $ticket = $this->GetAll();
         require_once(VIEWS_PATH . "TicketsView.php");
     }
 
